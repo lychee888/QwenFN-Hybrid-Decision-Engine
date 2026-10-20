@@ -37,8 +37,8 @@ reported.
 |---|---:|---:|---:|---:|---|
 | Legacy strict | 213 | 198 | 198 | 199 | Jev 1.13.0 published: 186 |
 | Legacy score, choice surrogate | 18 | 16 | 15 | 16 | Jev 1.13.0 published: 14, native score |
-| DMUP primary | 200 | 176 | 178 | 176 | Saved Jev measurement, see below |
-| DMUP shuffled controls | 40 | 20 | 35 | 36 | Saved Jev measurement, see below |
+| DMUP primary | 200 | 176 | 178 | 176 | Jev 1.13.0, our API run: 206 and 207 of 240 |
+| DMUP shuffled controls | 40 | 20 | 35 | 36 | Jev 1.13.0, our API run: 206 and 207 of 240 |
 | ChaosNLI subset | 96 | 65 | 65 | 65 | Published plurality accuracy: 62 |
 
 | Lane | Items | This package | Jev 1.13.0 published |
@@ -69,9 +69,11 @@ Paired comparisons use the exact two-sided McNemar test on the same items:
   accuracy is 61.8% to 66.6%.
 - ChaosNLI subset of 96: 65 correct in all three repeats against a published plurality accuracy
   of 62, p = 0.5078 in each repeat. This sample cannot separate the two systems.
-- DMUP: the reference is a Jev 1.13.0 measurement of the same 240 items that we saved earlier
-  with permission. It is not a published result, so its per-item outputs are not included here.
-  None of the paired tests is significant (p from 0.061 to 0.302).
+- DMUP: the reference is Jev 1.13.0 through its hosted API, run by us on the same 240 frozen
+  items in two passes, scoring 206 and 207 of 240. Our repeats scored 196, 213 and 212 against
+  those passes. None of the paired tests is significant (p from 0.061 to 0.302). The aggregate
+  counts are published here; the per-item Jev outputs are not redistributed, so the paired test
+  cannot be recomputed from this bundle.
 - DMUP shuffled controls: 3 of 24 valid pairs changed the chosen meaning in repeat 1;
   16 additional pairs were undefined because a call failed. Repeats 2 and 3 had 2 and 1 flips
   among 40 valid pairs each. Failed attempts still count wrong in accuracy denominators.

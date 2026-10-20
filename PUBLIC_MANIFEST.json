@@ -24,8 +24,8 @@
     },
     {
       "path": "bench/expanded/summary.json",
-      "bytes": 12551,
-      "sha256": "5627aae3fd10c2cb307189f6f63c6d39f603d2e3b771469536f4f7c5f8cb6fdc"
+      "bytes": 12628,
+      "sha256": "c8edfe59fdb4c1104a532b6dc901244f432cb511e632dd42dd584d9400f7907e"
     },
     {
       "path": "bench/expanded/verify_expanded.py",
@@ -134,8 +134,8 @@
     },
     {
       "path": "docs/benchmarks.md",
-      "bytes": 14435,
-      "sha256": "3f56313f5e135bcc6ca6400c181f599b770487c743ef3869bacde7aaecea6925"
+      "bytes": 14622,
+      "sha256": "e0a9d9182c75925477a84c0c95b1963bd50b32c7da3830dc87c47c0b81300275"
     },
     {
       "path": "docs/charts/autotrust-231.png",

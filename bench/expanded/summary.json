@@ -332,7 +332,7 @@
       "note": "Positive TVD difference means our probabilities are further from the human vote distribution than the published ones."
     },
     "dmup_240_vs_saved_jev_measurement": {
-      "reference": "Owner-authorised historical Jev 1.13.0 measurement of the same 240 frozen items (two passes). Saved output, not a published file; per-item outputs not redistributed.",
+      "reference": "Jev 1.13.0 hosted API, run by us on the same 240 frozen items in two passes (206 and 207 of 240). Aggregate counts and paired tests are published here; per-item Jev outputs are not redistributed, so they cannot be recomputed from this bundle.",
       "items": "200 primary + 40 shuffled-option controls",
       "passes": {
         "1": {
