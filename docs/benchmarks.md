@@ -95,7 +95,7 @@ What these results do not show:
 
 - Fresh generalization. Every item is public, and the legacy tasks were used during development.
 - An official modern JevBench score. Jev was not run for this panel; the comparisons use
-  published or previously saved outputs.
+  published outputs or a recorded run we performed ourselves.
 - That repeats are independent evidence. They measure run-to-run variation on the same items.
 - Anything about option counts above 16 on this panel. This panel used option counts up to 16
   only; the wide scaling panel covers larger counts.
