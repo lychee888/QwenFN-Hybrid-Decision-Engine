@@ -43,6 +43,11 @@
       "sha256": "ef8c2c7b829480244f44560b9328731830f3a27ca7416dddf244627c7c6dbbbb"
     },
     {
+      "path": "bench/make_charts.py",
+      "bytes": 7797,
+      "sha256": "a925fcf6d095daf9cdbb01e0d9be5bb43ef00550f4e273ad31c4a2a84b56bff6"
+    },
+    {
       "path": "bench/recompute_legacy.py",
       "bytes": 9012,
       "sha256": "f56f6b4e93e780714c742f98a73913a22245202b2330dbab617e51e3024e4101"
@@ -129,8 +134,33 @@
     },
     {
       "path": "docs/benchmarks.md",
-      "bytes": 13887,
-      "sha256": "30f5eb8aafb6bea43dcdac0445251da5443fdf4607c3ed005d9d4aed55ec1006"
+      "bytes": 14809,
+      "sha256": "99b1ff602f4e0759cff2a5b63845c078e3ce888497dc56e54d323b55d4c19fdb"
+    },
+    {
+      "path": "docs/charts/autotrust.png",
+      "bytes": 94241,
+      "sha256": "fb3abbfd5a22ca4aea3202ac5c53eb9ad5818a0a998c711838bbf67402440cbb"
+    },
+    {
+      "path": "docs/charts/chaos-paired.png",
+      "bytes": 64216,
+      "sha256": "872af40d15653999468990630ecefbe1b3dbd59347f90729276332a9a2321d2d"
+    },
+    {
+      "path": "docs/charts/head-to-head.png",
+      "bytes": 103174,
+      "sha256": "2c68f11698712983acc856efbdb96b2366c066603a4c3ea22b3b63f410523b10"
+    },
+    {
+      "path": "docs/charts/legacy-repeat.png",
+      "bytes": 69452,
+      "sha256": "859422b025090e568f30770d87ea4f4539a5a72d33b58f5383670c981a1a6be5"
+    },
+    {
+      "path": "docs/charts/scaling.png",
+      "bytes": 104844,
+      "sha256": "5146630d38801d855622ef61b34932222ad2c9d4301cfd203d67cedea25bd4a8"
     },
     {
       "path": "docs/installation.md",
@@ -229,8 +259,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 10051,
-      "sha256": "64f8f05395d6f2e74b09ceebcfe9e1d71db0beba226ec49c3c0cfb0064dbcfe8"
+      "bytes": 10324,
+      "sha256": "93bc8187d74433d8b344861caff2e77379d21d474df59479ea3f65d3446ee937"
     },
     {
       "path": "runtime-dependencies.json",

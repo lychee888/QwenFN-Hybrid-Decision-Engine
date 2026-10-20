@@ -6,6 +6,24 @@ the typed gateway. The choice lanes cover 2 to 16 options (lettered path) and, o
 scaling panel, 32 to 256 options (wide-label path). No speed, latency or throughput figures are
 reported anywhere in this document.
 
+## Results at a glance
+
+![Accuracy advantage over published references](charts/head-to-head.png)
+
+Paired comparisons on the same items. Legacy JevBench and ChaosNLI carry exact McNemar tests; the AutoTrust bar is a descriptive re-aggregation because their per-item outputs are not public.
+
+![Legacy strict subset by repeat](charts/legacy-repeat.png)
+
+The unchanged base answers 12 to 13 more of the 213 public legacy items than the published Jev 1.13.0 output in every repeat.
+
+![ChaosNLI paired outcomes](charts/chaos-paired.png)
+
+On the 1,599 ChaosNLI rows, 143 are correct here and wrong in the published reference, against 96 the other way.
+
+![AutoTrust family-macro comparison](charts/autotrust.png)
+
+Family-macro accuracy on the public 231-item set, recomputed for all three repeats. The comparison is descriptive, not a controlled head-to-head.
+
 ## Legacy panel: 3,300 measured calls
 
 This panel was measured against the production deployment. 3,300 calls were scheduled; 16 calls
@@ -108,6 +126,8 @@ uses the frozen benchmark rule (exact ties broken by option key name).
 | 64 | 194 | 64.67% | 207 |
 | 128 | 184 | 61.33% | 193 |
 | 256 | 171 | 57.00% | 178 |
+
+![Accuracy by option count](charts/scaling.png)
 
 Paired scaling of the same 300 primary items (exact two-sided McNemar, item-clustered
 bootstrap):

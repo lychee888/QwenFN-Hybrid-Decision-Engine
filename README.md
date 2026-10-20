@@ -1,6 +1,8 @@
-# QFN decision runtime
+# QwenFN Hybrid Decision Engine
 
-**Model package:** [lychee888/Qwen3.8-Flash-Next-Decision](https://huggingface.co/lychee888/Qwen3.8-Flash-Next-Decision) carries the matching complete weight tree, model card and decision configuration.
+**One model, one engine, two interfaces: System 1 + System 2.** Conventional LLM and decision model (jev-style) output on one vLLM instance.
+
+**Model package:** [lychee888/Qwen3.8-Flash-Next-Hybrid-Decision](https://huggingface.co/lychee888/Qwen3.8-Flash-Next-Hybrid-Decision) carries the matching complete weight tree, model card and decision configuration.
 
 A typed decision gateway for Qwen3.8-Flash-Next. You send a question with a fixed set of options (2 to 256); the gateway reads the option-token logits at the end of the prompt through a request-bound vLLM capture hook and returns a probability for each option. Ordinary chat, tool calls and streaming keep running on the same engine.
 
@@ -85,7 +87,7 @@ A public agent skill, `skills/qfn-decide/SKILL.md`, describes the same choice AP
 
 ## Model and licenses
 
-The matching model package is [lychee888/Qwen3.8-Flash-Next-Decision](https://huggingface.co/lychee888/Qwen3.8-Flash-Next-Decision), which carries the complete weight tree this runtime expects plus the card, decision configuration and catalog. It derives from [lychee888/Qwen3.8-Flash-Next-Uncensored-NVFP4-FP8PLE](https://huggingface.co/lychee888/Qwen3.8-Flash-Next-Uncensored-NVFP4-FP8PLE) at revision `1b3c3cedc14fb3bee4294dea5e3515af74b8268a`. The weights are licensed under the Qwen Community License 1.0, not by this repository.
+The matching model package is [lychee888/Qwen3.8-Flash-Next-Hybrid-Decision](https://huggingface.co/lychee888/Qwen3.8-Flash-Next-Hybrid-Decision), which carries the complete weight tree this runtime expects plus the card, decision configuration and catalog. It derives from [lychee888/Qwen3.8-Flash-Next-Uncensored-NVFP4-FP8PLE](https://huggingface.co/lychee888/Qwen3.8-Flash-Next-Uncensored-NVFP4-FP8PLE) at revision `1b3c3cedc14fb3bee4294dea5e3515af74b8268a`. The weights are licensed under the Qwen Community License 1.0, not by this repository.
 
 Project code is Apache-2.0. The inherited overlays keep vLLM's Apache headers and the MIT recipe attribution. Model licensing is separate: the quantized derivative's card declares Apache-2.0, but the official Qwen base carries the Qwen Community License 1.0, which includes conditions for commercial Model as a Service and AI Work Assistant businesses. An Apache software license does not remove those model-license conditions. We have not pinned which official base revision the derivative was made from, so do not read this repository as granting unrestricted commercial rights to the weights. See [licenses](docs/licenses.md) and [NOTICE](NOTICE).
 
