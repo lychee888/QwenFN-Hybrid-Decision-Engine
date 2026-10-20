@@ -34,6 +34,8 @@ Those launches were on our own hosts; nobody has installed it from scratch on a 
 
 ## Results
 
+![Accuracy advantage over published references](docs/charts/head-to-head.png)
+
 Summary of the 20 October 2026 measurements on the production deployment (details, caveats, both tie rules and the wide scaling panel in [Benchmarks](docs/benchmarks.md)):
 
 - Legacy lanes (option counts up to 16): the unchanged base scored 198, 198 and 199 of 213 on the public JevBench strict legacy tasks in three repeats, against 186 for Jev 1.13.0's published outputs (paired exact McNemar p between 0.0023 and 0.0075). On all 1,599 ChaosNLI test rows under the frozen benchmark tie rule, plurality accuracy was 64.29% against Jev's published 61.35%, but our probabilities were further from the human vote spread (mean total variation distance 0.362 against 0.332). 16 calls failed and count as wrong; the benchmarks doc describes them with no causal attribution.
