@@ -44,8 +44,8 @@
     },
     {
       "path": "bench/make_charts.py",
-      "bytes": 7797,
-      "sha256": "a925fcf6d095daf9cdbb01e0d9be5bb43ef00550f4e273ad31c4a2a84b56bff6"
+      "bytes": 2789,
+      "sha256": "d2e68a75ffa03333ed0c8382e731fb1421b307d75a385ee4b8c2b3be9a143c83"
     },
     {
       "path": "bench/recompute_legacy.py",
@@ -134,33 +134,18 @@
     },
     {
       "path": "docs/benchmarks.md",
-      "bytes": 14809,
-      "sha256": "99b1ff602f4e0759cff2a5b63845c078e3ce888497dc56e54d323b55d4c19fdb"
+      "bytes": 14435,
+      "sha256": "3f56313f5e135bcc6ca6400c181f599b770487c743ef3869bacde7aaecea6925"
     },
     {
-      "path": "docs/charts/autotrust.png",
-      "bytes": 94241,
-      "sha256": "fb3abbfd5a22ca4aea3202ac5c53eb9ad5818a0a998c711838bbf67402440cbb"
+      "path": "docs/charts/autotrust-231.png",
+      "bytes": 73153,
+      "sha256": "2d69db4a1c4ea63dc1fc93ce99abe7480c6c42d276968643eff36f4cc1aee594"
     },
     {
-      "path": "docs/charts/chaos-paired.png",
-      "bytes": 64216,
-      "sha256": "872af40d15653999468990630ecefbe1b3dbd59347f90729276332a9a2321d2d"
-    },
-    {
-      "path": "docs/charts/head-to-head.png",
-      "bytes": 103174,
-      "sha256": "2c68f11698712983acc856efbdb96b2366c066603a4c3ea22b3b63f410523b10"
-    },
-    {
-      "path": "docs/charts/legacy-repeat.png",
-      "bytes": 69452,
-      "sha256": "859422b025090e568f30770d87ea4f4539a5a72d33b58f5383670c981a1a6be5"
-    },
-    {
-      "path": "docs/charts/scaling.png",
-      "bytes": 104844,
-      "sha256": "5146630d38801d855622ef61b34932222ad2c9d4301cfd203d67cedea25bd4a8"
+      "path": "docs/charts/legacy-213.png",
+      "bytes": 68722,
+      "sha256": "7484dd5b440daccff101b56ab1df7cfe45aea186c57621058a3052951c07e20a"
     },
     {
       "path": "docs/installation.md",
@@ -259,8 +244,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 10405,
-      "sha256": "c5514bc8e3ada899e2a9e18aeb732f316c76bd91df879190e8f2a90e8715fab9"
+      "bytes": 10392,
+      "sha256": "58960895742879075ba0b559860a3858befb29d810389f61d244a1b8b0dc8f87"
     },
     {
       "path": "runtime-dependencies.json",

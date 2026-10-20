@@ -8,21 +8,15 @@ reported anywhere in this document.
 
 ## Results at a glance
 
-![Accuracy advantage over published references](charts/head-to-head.png)
+![Legacy JevBench, 213 public items](charts/legacy-213.png)
 
-Paired comparisons on the same items. Legacy JevBench and ChaosNLI carry exact McNemar tests; the AutoTrust bar is a descriptive re-aggregation because their per-item outputs are not public.
+Same 213 items, three repeats pooled for this build against the published Jev 1.13.0 output. Paired exact McNemar p between 0.002 and 0.008.
 
-![Legacy strict subset by repeat](charts/legacy-repeat.png)
+![Legacy JevBench, 231 items, family macro](charts/autotrust-231.png)
 
-The unchanged base answers 12 to 13 more of the 213 public legacy items than the published Jev 1.13.0 output in every repeat.
+AutoTrust's own reported metric and item set. Descriptive only: our 18 score items are choice surrogates and their per-item outputs are not public.
 
-![ChaosNLI paired outcomes](charts/chaos-paired.png)
-
-On the 1,599 ChaosNLI rows, 143 are correct here and wrong in the published reference, against 96 the other way.
-
-![AutoTrust family-macro comparison](charts/autotrust.png)
-
-Family-macro accuracy on the public 231-item set, recomputed for all three repeats. The comparison is descriptive, not a controlled head-to-head.
+ChaosNLI and the option-scaling panel appear in the tables below rather than as charts.
 
 ## Legacy panel: 3,300 measured calls
 
@@ -126,8 +120,6 @@ uses the frozen benchmark rule (exact ties broken by option key name).
 | 64 | 194 | 64.67% | 207 |
 | 128 | 184 | 61.33% | 193 |
 | 256 | 171 | 57.00% | 178 |
-
-![Accuracy by option count](charts/scaling.png)
 
 Paired scaling of the same 300 primary items (exact two-sided McNemar, item-clustered
 bootstrap):

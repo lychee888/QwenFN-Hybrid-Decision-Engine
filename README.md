@@ -34,7 +34,7 @@ Those launches were on our own hosts; nobody has installed it from scratch on a 
 
 ## Results
 
-![Accuracy advantage over published references](docs/charts/head-to-head.png)
+![Legacy JevBench, 213 public items](docs/charts/legacy-213.png)
 
 Summary of the 20 October 2026 measurements on the production deployment (details, caveats, both tie rules and the wide scaling panel in [Benchmarks](docs/benchmarks.md)):
 
