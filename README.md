@@ -1,5 +1,7 @@
 # QFN decision runtime
 
+**Model package:** [lychee888/Qwen3.8-Flash-Next-Decision](https://huggingface.co/lychee888/Qwen3.8-Flash-Next-Decision) carries the matching complete weight tree, model card and decision configuration.
+
 A typed decision gateway for Qwen3.8-Flash-Next. You send a question with a fixed set of options (2 to 256); the gateway reads the option-token logits at the end of the prompt through a request-bound vLLM capture hook and returns a probability for each option. Ordinary chat, tool calls and streaming keep running on the same engine.
 
 The default path (B0) uses the unchanged base model. This repository contains no learned head or LoRA weights, and the launcher never loads one.

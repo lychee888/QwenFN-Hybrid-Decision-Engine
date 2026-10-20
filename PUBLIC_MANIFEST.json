@@ -229,8 +229,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 9847,
-      "sha256": "7b3939f40c918ac03e3ea7bd882eae0925ae02f1f875b69e37db48464ee9ebaf"
+      "bytes": 10051,
+      "sha256": "64f8f05395d6f2e74b09ceebcfe9e1d71db0beba226ec49c3c0cfb0064dbcfe8"
     },
     {
       "path": "runtime-dependencies.json",
