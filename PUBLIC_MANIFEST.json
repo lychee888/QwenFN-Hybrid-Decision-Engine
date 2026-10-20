@@ -44,8 +44,8 @@
     },
     {
       "path": "bench/make_charts.py",
-      "bytes": 2789,
-      "sha256": "d2e68a75ffa03333ed0c8382e731fb1421b307d75a385ee4b8c2b3be9a143c83"
+      "bytes": 2768,
+      "sha256": "bb9c17d3020d9e7dadd80fa889e5e3a368f2eb3b0d2663eef62544712b637c95"
     },
     {
       "path": "bench/recompute_legacy.py",
@@ -144,8 +144,8 @@
     },
     {
       "path": "docs/charts/legacy-213.png",
-      "bytes": 68722,
-      "sha256": "7484dd5b440daccff101b56ab1df7cfe45aea186c57621058a3052951c07e20a"
+      "bytes": 59407,
+      "sha256": "5412b64d6390af3546ca8c6bd38619a797c68bb87bb7b38e10e57b90e45019c4"
     },
     {
       "path": "docs/installation.md",

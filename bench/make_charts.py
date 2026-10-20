@@ -47,7 +47,8 @@ def bars(title, subtitle, rows, footnote, name):
     ax.grid(axis="x", color="#e3e7ec", linewidth=0.8)
     ax.set_axisbelow(True)
     ax.set_title(title, loc="left", fontsize=13, fontweight="bold", color=TEXT, pad=16)
-    ax.text(0, 1.02, subtitle, transform=ax.transAxes, fontsize=10, color=MUTED)
+    if subtitle:
+        ax.text(0, 1.02, subtitle, transform=ax.transAxes, fontsize=10, color=MUTED)
     fig.text(0.01, 0.02, footnote, fontsize=8, color=MUTED)
     fig.tight_layout(rect=(0, 0.06, 1, 1))
     fig.savefig(OUT / name, dpi=220)
@@ -58,7 +59,7 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     bars(
         "Legacy JevBench, 213 public items",
-        "Same items. Ours pooled over three repeats.",
+        "",
         [("QwenFN Hybrid Decision Engine", 93.1, OURS), ("Jev 1.13.0, published", 87.3, REF)],
         "Paired exact McNemar p = 0.002 to 0.008. Public items, reused during development.",
         "legacy-213.png",
