@@ -1,0 +1,55 @@
+{
+  "schema": "qfn.release-verification/1",
+  "date_utc": "2026-10-20",
+  "scope": "CPU source and installed wheel, benchmark derivatives and maintainer-host functional check; not a fresh-machine GPU installation.",
+  "source_tests": {
+    "passed": 690,
+    "skipped": 5
+  },
+  "installed_tests": {
+    "passed": 690,
+    "skipped": 5,
+    "checkout_imports": false,
+    "fresh_install_environment": true,
+    "build_environment_reused_from_interrupted_attempt": true
+  },
+  "wheel": {
+    "filename": "qfn_decision-0.1.0-py3-none-any.whl",
+    "sha256": "8320b963522f23d32c66cb3b0f3efd8d9cbad88ba3bff266eb69ca7c2123dfe8"
+  },
+  "generated_wide_configuration": {
+    "gateway_max_options": 256,
+    "capture_labels": 256,
+    "both_actual_consumers_parsed": true,
+    "gateway_only_max_options_absent_from_engine_block": true
+  },
+  "benchmark_exports": {
+    "regression_attempts": 3300,
+    "regression_errors_retained": 16,
+    "wide_attempts": 3000,
+    "wide_errors": 0,
+    "retries": 0,
+    "exclusions": 0,
+    "all_rows_compared_to_preserved_originals": true,
+    "offline_verifier_commands_passed": 8,
+    "aggregate_guard_tests_passed": 8
+  },
+  "model_preparation_fixture_tests": {
+    "passed": 6,
+    "scope": "Synthetic files only, not a full-weight download or new GPU launch"
+  },
+  "functional_check": {
+    "scope": "Separate maintainer-host preflight, not benchmark evidence",
+    "options": 256,
+    "selected_last_option": true,
+    "schema": "qfn.decide.wide/1"
+  },
+  "skill_version": "0.3.0",
+  "publication_performed": false,
+  "model_weights_changed": false,
+  "remaining_external_gates": [
+    "Full tested vLLM fork source and build recipe",
+    "Public image retrieval and fresh-machine GPU installation",
+    "Applicable base-weight provenance and redistribution permission"
+  ]
+}

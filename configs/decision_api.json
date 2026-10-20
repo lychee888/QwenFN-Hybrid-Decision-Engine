@@ -1,0 +1,96 @@
+{
+  "schema": "qfn.decision-api/1",
+  "service_version": "s6-gateway/0.1.0",
+  "stage": "Typed gateway 0.1.0. Live-validated with the B0 arm and qwen_chat_letters-v1 template; other settings are fixture-tested only.",
+  "host": "127.0.0.1",
+  "port": 8890,
+  "provider": "engine",
+  "engine": {
+    "base_url": "http://127.0.0.1:8888",
+    "model": "qwen3.8-flash-next-uncensored",
+    "socket_timeout_s": 30.0,
+    "request_timeout_s": 120.0,
+    "max_proxy_body_bytes": 8388608,
+    "health_ping": false,
+    "forward_headers": [
+      "content-type",
+      "accept",
+      "user-agent"
+    ],
+    "forward_headers_from_env": {
+      "authorization": "QFN_ENGINE_AUTHORIZATION",
+      "x-api-key": "QFN_ENGINE_API_KEY"
+    },
+    "note": "Same engine as ordinary S2 traffic. The gateway never sends a key it was not configured to forward and never prints one. Ordinary /v1/chat/completions and /v1/completions keep the engine's own caps (context, max_tokens, MTP, KV) : they stay engine-owned."
+  },
+  "template": {
+    "template_id": "autotrust_raw_bare-v1",
+    "version": "bare-v1",
+    "require_version_match": true,
+    "chat_template_kwargs": {},
+    "note": "Frozen template + version. A run whose tokenizer/template revision cannot be matched is refused rather than reinterpreted."
+  },
+  "tokenizer": {
+    "revision": null,
+    "add_special_tokens": false,
+    "note": "Set 'revision' to the serving tokenizer revision the operator actually has. While null, the H1 arm is refused (it cannot prove its head artifact matches the live tokenizer) and the response reports tokenizer.revision=null."
+  },
+  "head": {
+    "default_arm": "B0",
+    "h1": {
+      "artifact_path": null,
+      "verify_checksum": true,
+      "note": "H1 is the FP32 linear readout on the BF16 feature from the same engine, loaded through head.DecisionHead.load(verify_checksum=True) and validated against the frozen template/tokenizer. When the artifact is absent H1 is REFUSED; there is no silent fallback to B0."
+    }
+  },
+  "limits": {
+    "max_body_bytes": 262144,
+    "max_options": 16,
+    "max_state_chars": 32768,
+    "max_question_chars": 4096,
+    "max_option_description_chars": 2048,
+    "max_key_chars": 64,
+    "max_total_chars": 96000
+  },
+  "concurrency": {
+    "max_inflight": 8,
+    "note": "Bounded: a request that cannot get a slot is answered 429. No unbounded worker growth."
+  },
+  "timeouts": {
+    "request_s": 120.0,
+    "socket_s": 30.0,
+    "capture_deadline_s": 30.0,
+    "poll_initial_ms": 5.0,
+    "poll_max_ms": 100.0,
+    "poll_backoff": 1.5
+  },
+  "capture": {
+    "dir": null,
+    "dir_allowlist": [],
+    "record_max_bytes": 8388608,
+    "transport": "one_discarded_token_capture",
+    "max_completion_tokens": 1,
+    "tolerate_unknown_meta_fields": false,
+    "note": "dir must be an absolute path the operator configured and must be inside dir_allowlist. Readout is a local-filesystem read of the same engine's capture directory, so the CPU FP32 head readout is a slow path and the recorded timings include I/O. A future engine-side small-head readout can replace this backend; that is NOT claimed here."
+  },
+  "logging": {
+    "redact_prompts": true,
+    "log_file": null
+  },
+  "parity": {
+    "status": "declared_not_measured",
+    "source": "configs/numeric_tolerances.json (PM-registered design tolerances, read-only reference)",
+    "base_logits_bf16": "2 BF16 ULPs per selected logit plus 1e-4 floor",
+    "base_restricted_probability": "absolute 0.005",
+    "fp32_direct_head_offline_vs_online": "atol 1e-5 / rtol 1e-5",
+    "masked_probability_sum_fp32": "within 1e-6",
+    "inactive_slots": "exactly 0",
+    "note": "B0 and H1 readouts are only comparable under these declared bounds; no parity measurement has been made in this stage."
+  },
+  "fixture": {
+    "seed": 12345,
+    "vector_source": "seeded",
+    "record": "wellformed",
+    "note": "Deterministic synthetic feature provider used only by reports/s6 fixtures and the --provider fixture demo. Explicitly labelled fixture_only in every response and never to be presented as live evidence."
+  }
+}

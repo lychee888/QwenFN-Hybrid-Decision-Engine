@@ -1,0 +1,343 @@
+{
+  "schema": "qfn.autotrust-comparison/2",
+  "date_utc": "2026-10-20",
+  "derivative_analysis": "Family-macro re-aggregation of all three repeats from the current 3,300-call run; no new inference.",
+  "observations_sha256": "f6850e9e1766621bac7f1ba16c138ada1d25ac0c843a7007255997b6fc4cddc6",
+  "task_metadata_sha256": "ef8c2c7b829480244f44560b9328731830f3a27ca7416dddf244627c7c6dbbbb",
+  "task_revision": "7625ecb1b075cfe4d09d34141d353325825eea1d",
+  "tasks": [
+    {
+      "file": "easy.jsonl",
+      "sha256": "231df3c2c8e88a1a8c137ebe85de96ba70fabd330849098ac7b3c52c70b7172b"
+    },
+    {
+      "file": "hard.jsonl",
+      "sha256": "89e9e6becb33ed88c1de7d42dcc87531b2fb64cfaef4e1986faf7c37b3f80ebb"
+    },
+    {
+      "file": "original.jsonl",
+      "sha256": "5c2414edb3006b8bfcb70fda433f0f9ca015759433849f8d3104328a1f7c4180"
+    }
+  ],
+  "repeats": [
+    {
+      "repeat": 1,
+      "n": 231,
+      "correct": 214,
+      "micro_accuracy": 0.9264069264069265,
+      "n_families": 18,
+      "family_macro_accuracy": 0.9394679509230592,
+      "family_macro_serving_rule": 0.9278277392828477,
+      "families": {
+        "adequacy": {
+          "n": 12,
+          "correct": 12,
+          "correct_serving": 12
+        },
+        "adversarial": {
+          "n": 6,
+          "correct": 6,
+          "correct_serving": 6
+        },
+        "ambiguous": {
+          "n": 7,
+          "correct": 7,
+          "correct_serving": 6
+        },
+        "extraction": {
+          "n": 24,
+          "correct": 24,
+          "correct_serving": 24
+        },
+        "fact": {
+          "n": 12,
+          "correct": 12,
+          "correct_serving": 12
+        },
+        "intent": {
+          "n": 24,
+          "correct": 24,
+          "correct_serving": 24
+        },
+        "judge_hard": {
+          "n": 17,
+          "correct": 15,
+          "correct_serving": 15
+        },
+        "long_policy": {
+          "n": 19,
+          "correct": 17,
+          "correct_serving": 17
+        },
+        "multi_hop": {
+          "n": 18,
+          "correct": 15,
+          "correct_serving": 15
+        },
+        "ordinal": {
+          "n": 12,
+          "correct": 12,
+          "correct_serving": 12
+        },
+        "policy": {
+          "n": 12,
+          "correct": 12,
+          "correct_serving": 12
+        },
+        "probability": {
+          "n": 10,
+          "correct": 9,
+          "correct_serving": 9
+        },
+        "routing": {
+          "n": 12,
+          "correct": 12,
+          "correct_serving": 12
+        },
+        "routing_hard": {
+          "n": 5,
+          "correct": 5,
+          "correct_serving": 5
+        },
+        "temporal_numeric": {
+          "n": 15,
+          "correct": 6,
+          "correct_serving": 5
+        },
+        "tool_selection": {
+          "n": 12,
+          "correct": 12,
+          "correct_serving": 12
+        },
+        "tradeoff": {
+          "n": 6,
+          "correct": 6,
+          "correct_serving": 6
+        },
+        "trap": {
+          "n": 8,
+          "correct": 8,
+          "correct_serving": 8
+        }
+      }
+    },
+    {
+      "repeat": 2,
+      "n": 231,
+      "correct": 213,
+      "micro_accuracy": 0.922077922077922,
+      "n_families": 18,
+      "family_macro_accuracy": 0.9295914077131827,
+      "family_macro_serving_rule": 0.9295914077131827,
+      "families": {
+        "adequacy": {
+          "n": 12,
+          "correct": 12,
+          "correct_serving": 12
+        },
+        "adversarial": {
+          "n": 6,
+          "correct": 6,
+          "correct_serving": 6
+        },
+        "ambiguous": {
+          "n": 7,
+          "correct": 7,
+          "correct_serving": 7
+        },
+        "extraction": {
+          "n": 24,
+          "correct": 24,
+          "correct_serving": 24
+        },
+        "fact": {
+          "n": 12,
+          "correct": 12,
+          "correct_serving": 12
+        },
+        "intent": {
+          "n": 24,
+          "correct": 24,
+          "correct_serving": 24
+        },
+        "judge_hard": {
+          "n": 17,
+          "correct": 15,
+          "correct_serving": 15
+        },
+        "long_policy": {
+          "n": 19,
+          "correct": 17,
+          "correct_serving": 17
+        },
+        "multi_hop": {
+          "n": 18,
+          "correct": 16,
+          "correct_serving": 16
+        },
+        "ordinal": {
+          "n": 12,
+          "correct": 12,
+          "correct_serving": 12
+        },
+        "policy": {
+          "n": 12,
+          "correct": 12,
+          "correct_serving": 12
+        },
+        "probability": {
+          "n": 10,
+          "correct": 9,
+          "correct_serving": 9
+        },
+        "routing": {
+          "n": 12,
+          "correct": 12,
+          "correct_serving": 12
+        },
+        "routing_hard": {
+          "n": 5,
+          "correct": 5,
+          "correct_serving": 5
+        },
+        "temporal_numeric": {
+          "n": 15,
+          "correct": 5,
+          "correct_serving": 5
+        },
+        "tool_selection": {
+          "n": 12,
+          "correct": 12,
+          "correct_serving": 12
+        },
+        "tradeoff": {
+          "n": 6,
+          "correct": 5,
+          "correct_serving": 5
+        },
+        "trap": {
+          "n": 8,
+          "correct": 8,
+          "correct_serving": 8
+        }
+      }
+    },
+    {
+      "repeat": 3,
+      "n": 231,
+      "correct": 215,
+      "micro_accuracy": 0.9307359307359307,
+      "n_families": 18,
+      "family_macro_accuracy": 0.9359458013224783,
+      "family_macro_serving_rule": 0.9359458013224783,
+      "families": {
+        "adequacy": {
+          "n": 12,
+          "correct": 12,
+          "correct_serving": 12
+        },
+        "adversarial": {
+          "n": 6,
+          "correct": 6,
+          "correct_serving": 6
+        },
+        "ambiguous": {
+          "n": 7,
+          "correct": 7,
+          "correct_serving": 7
+        },
+        "extraction": {
+          "n": 24,
+          "correct": 24,
+          "correct_serving": 24
+        },
+        "fact": {
+          "n": 12,
+          "correct": 12,
+          "correct_serving": 12
+        },
+        "intent": {
+          "n": 24,
+          "correct": 24,
+          "correct_serving": 24
+        },
+        "judge_hard": {
+          "n": 17,
+          "correct": 16,
+          "correct_serving": 16
+        },
+        "long_policy": {
+          "n": 19,
+          "correct": 17,
+          "correct_serving": 17
+        },
+        "multi_hop": {
+          "n": 18,
+          "correct": 17,
+          "correct_serving": 17
+        },
+        "ordinal": {
+          "n": 12,
+          "correct": 12,
+          "correct_serving": 12
+        },
+        "policy": {
+          "n": 12,
+          "correct": 12,
+          "correct_serving": 12
+        },
+        "probability": {
+          "n": 10,
+          "correct": 9,
+          "correct_serving": 9
+        },
+        "routing": {
+          "n": 12,
+          "correct": 12,
+          "correct_serving": 12
+        },
+        "routing_hard": {
+          "n": 5,
+          "correct": 5,
+          "correct_serving": 5
+        },
+        "temporal_numeric": {
+          "n": 15,
+          "correct": 5,
+          "correct_serving": 5
+        },
+        "tool_selection": {
+          "n": 12,
+          "correct": 12,
+          "correct_serving": 12
+        },
+        "tradeoff": {
+          "n": 6,
+          "correct": 5,
+          "correct_serving": 5
+        },
+        "trap": {
+          "n": 8,
+          "correct": 8,
+          "correct_serving": 8
+        }
+      }
+    }
+  ],
+  "mean_family_macro_accuracy": 0.93500171998624,
+  "mean_family_macro_accuracy_serving_rule": 0.9311216494395029,
+  "published_autotrust_family_macro": 0.887,
+  "difference_points_descriptive": 4.800171998624004,
+  "autotrust_source": {
+    "url": "https://huggingface.co/autotrust/JEV-27B/blob/14b425269ed24452e0a5ad5a8f3e51d139647a88/README.md",
+    "readme_sha256": "ddff9a781adf07fef7a5985390e3ee18e46b0cd75aefc1886bd102a8bdfe9985"
+  },
+  "caveats": [
+    "Three repeats reuse public items that were used during development; not fresh holdout evidence.",
+    "Jev was not rerun; the reference is its saved published per-item output.",
+    "This is not an official modern JevBench leaderboard score.",
+    "Failed attempts count wrong; confidence metrics use valid distributions only.",
+    "The 18 score tasks use choice surrogates; AutoTrust uses native score.",
+    "No AutoTrust per-item outcomes or exact benchmark-input hashes are available here; this is descriptive, not a controlled paired comparison."
+  ]
+}

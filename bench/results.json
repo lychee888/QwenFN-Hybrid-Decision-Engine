@@ -1,0 +1,85 @@
+{
+  "schema": "qfn.legacy213-results/2",
+  "date_utc": "2026-10-20",
+  "items": 213,
+  "benchmark": "JevBench public legacy strict subset",
+  "base_arms": "unchanged B0",
+  "runs": [
+    {
+      "system": "B0",
+      "repeat": 1,
+      "n": 213,
+      "correct": 198,
+      "accuracy": 0.9295774647887324,
+      "valid_probability_n": 213,
+      "ece_10_equal_width": 0.06502610246112739
+    },
+    {
+      "system": "B0",
+      "repeat": 2,
+      "n": 213,
+      "correct": 198,
+      "accuracy": 0.9295774647887324,
+      "valid_probability_n": 213,
+      "ece_10_equal_width": 0.04332856219955771
+    },
+    {
+      "system": "B0",
+      "repeat": 3,
+      "n": 213,
+      "correct": 199,
+      "accuracy": 0.9342723004694836,
+      "valid_probability_n": 213,
+      "ece_10_equal_width": 0.057415270599755194
+    }
+  ],
+  "mean_accuracy": {
+    "B0": 0.9311424100156495
+  },
+  "descriptive_B0_vs_saved_Jev": [
+    {
+      "first_correct": 186,
+      "second_correct": 198,
+      "second_minus_first_items": 12,
+      "improved": 15,
+      "regressed": 3,
+      "mcnemar_exact_two_sided_p": 0.007537841796875
+    },
+    {
+      "first_correct": 186,
+      "second_correct": 198,
+      "second_minus_first_items": 12,
+      "improved": 15,
+      "regressed": 3,
+      "mcnemar_exact_two_sided_p": 0.007537841796875
+    },
+    {
+      "first_correct": 186,
+      "second_correct": 199,
+      "second_minus_first_items": 13,
+      "improved": 15,
+      "regressed": 2,
+      "mcnemar_exact_two_sided_p": 0.002349853515625
+    }
+  ],
+  "same_arm_repeat_agreement": {
+    "B0": {
+      "1-2": 209,
+      "1-3": 207,
+      "2-3": 209
+    }
+  },
+  "observations_sha256": "7cad8eaa0c359f2336e1f537d7fd45653b4a2bf8b3c94f05dfa08169897bfff2",
+  "expanded_observations_sha256": "f6850e9e1766621bac7f1ba16c138ada1d25ac0c843a7007255997b6fc4cddc6",
+  "expanded_panel": {
+    "measured_calls": 3300,
+    "errors": 16,
+    "summary": "expanded/summary.json"
+  },
+  "scope": [
+    "Three repeats reuse public items that were used during development; not fresh holdout evidence.",
+    "Jev was not rerun; the reference is its saved published per-item output.",
+    "This is not an official modern JevBench leaderboard score.",
+    "Failed attempts count wrong; confidence metrics use valid distributions only."
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "schema": "qfn.numeric_tolerances/1",
+  "stage": "S3 request-aligned feature capture",
+  "status": "pre_registered_design_bounds",
+  "registered_before_any_live_comparison": true,
+  "registered_by": "S3 build worker (PM design tolerances supplied in the S3 brief + architecture gate doc)",
+  "measured_evidence": "none. These are precision-derived DESIGN BOUNDS registered before any live capture. No S0/S1/S2 measurement was used to pick them, and none may be used to widen them after a failure.",
+  "precedent_note": "configs/evaluation_protocol.json leaves the numeric parity tolerance deliberately null ('pending'); this file fills that slot for the terminal-feature capture only. The S1 quality/parity slots are unaffected.",
+  "classes": {
+    "metadata": {
+      "applies_to": [
+        "engine_request_id <-> example_id mapping",
+        "prompt token count / prompt_len / terminal position / query range",
+        "logits_row_index, batch_index, internal index",
+        "prompt_token_sha256 (engine-computed vs client-computed)",
+        "shard/record sha256, archive checksums, byte sizes",
+        "verbalizer token ids"
+      ],
+      "policy": "EXACT",
+      "tolerance": 0,
+      "note": "Integers, ids and hashes must match bit-for-bit. Any mismatch is a hard failure and must be reported as a mis-association, never averaged or retried away."
+    },
+    "bf16_gemm_vs_runtime_selected_logits": {
+      "applies_to": "offline BF16 emulation of the 24 verbalizer rows (vector_bf16 x lm_head rows, bf16 operands, fp32 accumulate) vs the RAW runtime logits captured at the same rows",
+      "formula": "allow = 2 * ulp_bf16(max(|offline|, |runtime|)) + 1e-4",
+      "ulp_bf16_definition": "ulp_bf16(x) = 2 ** (floor(log2(|x|)) - 7) for finite non-zero x, else 0. BF16 has 1 sign + 8 exponent + 7 explicit mantissa bits (8 significant bits), so consecutive representable values inside [2**e, 2**(e+1)) differ by 2**(e-7).",
+      "why_two_ulps": "one ULP covers the bf16 rounding of the GEMM result, the second covers the rounding of the head-row operands participating in the accumulation that reaches the selected logit. This is a bound on the rounding of the compared quantities, not a claim about GEMM accumulation order.",
+      "floor": 0.0001,
+      "why_floor": "near logit 0 the pure ULP bound collapses towards 0 and becomes an unreachably tight rather than physically motivated bound; 1e-4 is the registered floor.",
+      "operator": "abs(offline - runtime) <= allow",
+      "scope_limit": "This class is emulation-based (numpy, no GPU). It bounds rounding only; it does not validate the real Marlin/FP8/BF16 kernel path, and the offline emulation cannot prove hardware behaviour."
+    },
+    "fp32_direct_head_offline_vs_online": {
+      "applies_to": "offline FP32 readout (vector_fp32 x effective fp32 rows, fp32 accumulate) vs the RAW runtime logits at the same 24 rows",
+      "atol": 1e-05,
+      "rtol": 1e-05,
+      "operator": "abs(offline - runtime) <= atol + rtol * abs(runtime)",
+      "scope_limit": "The runtime head is BF16, so this class can only pass if the comparison is done on a vector whose BF16 rounding is already applied (vector_bf16 -> fp32). A failure here is evidence of a row-ownership/scaling error, not of precision."
+    },
+    "base_restricted_probability": {
+      "applies_to": "softmax over the 24 masked base-token logits (runtime logits -> probabilities) vs the offline reconstruction of the same restricted distribution",
+      "absolute": 0.005,
+      "operator": "abs(p_offline - p_runtime) <= 0.005 for every active slot",
+      "note": "Absolute, not relative: probabilities near 0 have no meaningful relative bound."
+    },
+    "inactive_slots": {
+      "applies_to": "the 24-slot decision layout (noul 0:2, score 2:8, choice 8:24)",
+      "exact_zero": true,
+      "policy": "slots outside the active primitive must be EXACTLY 0.0 after masking; any non-zero inactive slot fails the gate"
+    },
+    "masked_probability_sum_fp32": {
+      "applies_to": "sum of the active masked probabilities computed in FP32",
+      "abs": 1e-06,
+      "note": "registered as 'sum within 1e-6 FP32'"
+    },
+    "row_scaling_and_softcap": {
+      "applies_to": "output-head scale and logit soft-cap read from the live LogitsProcessor",
+      "policy": "if the effective row scaling or a non-None soft-cap cannot be reproduced from the recorded LogitsProcessor values, the parity gate STOPS (no comparison is reported) instead of comparing under an unknown transform"
+    }
+  },
+  "evaluate_without_widening": {
+    "rule": "Tolerances are frozen before the first live comparison. A failure is reported as a failure.",
+    "permitted_follow_up": [
+      "Re-run the SAME comparison on a separate raw-logit repeat to measure run-to-run variation (recorded as a measurement, not as a tolerance).",
+      "Investigate the cause by kernel regime / batch shape / cache mode; fix the cause and re-run the same comparison.",
+      "If a class is later shown to be mis-specified (for example the soft-cap transform was missed), register a NEW versioned tolerance file with the reason and re-run everything under it; the old file is preserved."
+    ],
+    "not_permitted": [
+      "Editing a numeric value in this file in response to a failed comparison.",
+      "Reporting a comparison as passing under a different class than the one registered for it."
+    ],
+    "on_failure_do_not": "widen, average away, drop failing rows, or re-define which slots are active"
+  },
+  "repeat_measurement_policy": {
+    "available": "only if the live capture produced two records for the same prompt_token_sha256 (dup_disambiguation 0 and 1)",
+    "report": "max abs difference of the raw selected logits between repeats, per class, labelled as a MEASUREMENT",
+    "absent": "reported explicitly as 'no repeated raw-logit captures' - never substituted with a tolerance"
+  }
+}

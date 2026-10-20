@@ -1,0 +1,42 @@
+QFN decision runtime
+Copyright 2026 Lychee
+
+Project-owned runtime code, capture helpers, patch builder and tests: Apache-2.0.
+License text: licenses/Apache-2.0.txt.
+
+Inherited engine overlays in engine/overlays/:
+- vLLM project source: Apache-2.0. Original SPDX and copyright headers preserved.
+- MiaAI-Lab dual-worker recipe snapshot: MIT.
+  Copyright (c) 2026 Mia'a AI Lab.
+  The MIT license is retained in licenses/MiaAI-Lab-MIT.txt.
+
+The generated model runner is a derivative of vLLM, not a newly relicensed engine.
+No AGPL recipe files are included.
+
+Model files are not included. The official Qwen3.8-Flash-Next base uses Qwen
+Community License 1.0. The derivative card's Apache label does not resolve
+upstream permission or historical-source provenance. See docs/licenses.md.
+
+Prompt surface: the frozen chat-letter system prompt follows the swanOne
+readout surface. Its shim is MIT-licensed; the notice is retained in
+licenses/swanOne-MIT.txt. No swanOne model weights or source tree are included.
+The wide-label lane (17 to 256 options) uses its own frozen prompt surface,
+qwen_chat_wide-v1, written for this release; it is deployed alongside, not
+instead of, the lettered surface.
+
+Architectural and protocol reference: AutoTrust AI, autotrust/JEV-27B,
+https://huggingface.co/autotrust/JEV-27B, pinned revision
+ff9b67b9bcb2dc5a8499d540e0c4cd10b254f3a2 (Apache-2.0 per its model card).
+The reference 24-slot layout and verbalizer convention follow judge_config.json;
+the autotrust_raw_bare-v1 control transcribes the card's bare-v1 prompt.
+Production instead uses the separately attributed swanOne chat-letter prompt
+for 2..16 options and the release's own wide surface for 17..256 options.
+No AutoTrust model, LoRA or trained-head weights are included.
+The System One framing and noul/choice/score primitives originate with TypeSafe AI.
+Neither organization endorses or is affiliated with this release.
+Public legacy benchmark reference: fstandhartinger/jevbench (MIT notice in
+licenses/JevBench-MIT.txt); details and revision hashes are in
+docs/benchmarks.md and bench/results.json. The wide option-scaling panel uses
+the published Decision Models Under Pressure rq1 pools (README read-only, data
+CC BY-SA 4.0 per the dataset card); no task text, distractor pool or gold label
+is redistributed.

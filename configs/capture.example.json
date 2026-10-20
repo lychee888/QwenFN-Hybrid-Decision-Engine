@@ -1,0 +1,83 @@
+{
+  "schema": "qfn.capture-config/1",
+  "capture_dir": "/captures",
+  "marker_prefix": "cmpl-qfn-",
+  "export_dir": "/captures/artifacts",
+  "limits": {
+    "max_bytes": 4294967296,
+    "max_records": 4096
+  },
+  "capture": {
+    "capture_fp32_ref": true,
+    "capture_full_logits_row": false,
+    "capture_ranks": "rank0",
+    "debug_hidden_hash_all_ranks": false,
+    "token_hash_scope": "prompt",
+    "tp_export_rows": true
+  },
+  "verbalizers": {
+    "names": [
+      "false",
+      "true",
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P"
+    ],
+    "ids": [
+      3721,
+      1802,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47
+    ]
+  },
+  "production_storage": {
+    "retention_root": "/captures",
+    "max_retained_records": 4096,
+    "max_retained_bytes": 34359738368,
+    "min_free_disk_bytes": 10737418240,
+    "max_record_bytes": 262144,
+    "grace_seconds": 3600,
+    "ttl_seconds": 86400,
+    "snapshot_ttl_seconds": 5.0,
+    "pending_ttl_seconds": 300
+  }
+}

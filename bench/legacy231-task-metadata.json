@@ -1,0 +1,943 @@
+{
+  "revision": "7625ecb1b075cfe4d09d34141d353325825eea1d",
+  "sources": [
+    {
+      "file": "easy.jsonl",
+      "sha256": "231df3c2c8e88a1a8c137ebe85de96ba70fabd330849098ac7b3c52c70b7172b"
+    },
+    {
+      "file": "hard.jsonl",
+      "sha256": "89e9e6becb33ed88c1de7d42dcc87531b2fb64cfaef4e1986faf7c37b3f80ebb"
+    },
+    {
+      "file": "original.jsonl",
+      "sha256": "5c2414edb3006b8bfcb70fda433f0f9ca015759433849f8d3104328a1f7c4180"
+    }
+  ],
+  "items": {
+    "easy-intent-00": {
+      "family": "intent",
+      "gold": "track_order"
+    },
+    "easy-intent-01": {
+      "family": "intent",
+      "gold": "cancel_order"
+    },
+    "easy-intent-02": {
+      "family": "intent",
+      "gold": "change_address"
+    },
+    "easy-intent-03": {
+      "family": "intent",
+      "gold": "report_damage"
+    },
+    "easy-intent-04": {
+      "family": "intent",
+      "gold": "billing_question"
+    },
+    "easy-intent-05": {
+      "family": "intent",
+      "gold": "track_order"
+    },
+    "easy-intent-06": {
+      "family": "intent",
+      "gold": "set_alarm"
+    },
+    "easy-intent-07": {
+      "family": "intent",
+      "gold": "play_music"
+    },
+    "easy-intent-08": {
+      "family": "intent",
+      "gold": "weather"
+    },
+    "easy-intent-09": {
+      "family": "intent",
+      "gold": "send_message"
+    },
+    "easy-intent-10": {
+      "family": "intent",
+      "gold": "turn_off_lights"
+    },
+    "easy-intent-11": {
+      "family": "intent",
+      "gold": "set_alarm"
+    },
+    "easy-fact-00": {
+      "family": "fact",
+      "gold": "yes"
+    },
+    "easy-fact-01": {
+      "family": "fact",
+      "gold": "no"
+    },
+    "easy-fact-02": {
+      "family": "fact",
+      "gold": "yes"
+    },
+    "easy-fact-03": {
+      "family": "fact",
+      "gold": "no"
+    },
+    "easy-fact-04": {
+      "family": "fact",
+      "gold": "yes"
+    },
+    "easy-fact-05": {
+      "family": "fact",
+      "gold": "no"
+    },
+    "easy-fact-06": {
+      "family": "fact",
+      "gold": "yes"
+    },
+    "easy-fact-07": {
+      "family": "fact",
+      "gold": "no"
+    },
+    "easy-fact-08": {
+      "family": "fact",
+      "gold": "yes"
+    },
+    "easy-fact-09": {
+      "family": "fact",
+      "gold": "no"
+    },
+    "easy-fact-10": {
+      "family": "fact",
+      "gold": "yes"
+    },
+    "easy-fact-11": {
+      "family": "fact",
+      "gold": "no"
+    },
+    "easy-extraction-00": {
+      "family": "extraction",
+      "gold": "paypal"
+    },
+    "easy-extraction-01": {
+      "family": "extraction",
+      "gold": "cash"
+    },
+    "easy-extraction-02": {
+      "family": "extraction",
+      "gold": "bank_transfer"
+    },
+    "easy-extraction-03": {
+      "family": "extraction",
+      "gold": "high"
+    },
+    "easy-extraction-04": {
+      "family": "extraction",
+      "gold": "low"
+    },
+    "easy-extraction-05": {
+      "family": "extraction",
+      "gold": "urgent"
+    },
+    "easy-extraction-06": {
+      "family": "extraction",
+      "gold": "M"
+    },
+    "easy-extraction-07": {
+      "family": "extraction",
+      "gold": "XL"
+    },
+    "easy-extraction-08": {
+      "family": "extraction",
+      "gold": "thursday"
+    },
+    "easy-extraction-09": {
+      "family": "extraction",
+      "gold": "monday"
+    },
+    "easy-extraction-10": {
+      "family": "extraction",
+      "gold": "friday"
+    },
+    "easy-extraction-11": {
+      "family": "extraction",
+      "gold": "credit_card"
+    },
+    "easy-tool_selection-00": {
+      "family": "tool_selection",
+      "gold": "get_weather"
+    },
+    "easy-tool_selection-01": {
+      "family": "tool_selection",
+      "gold": "send_email"
+    },
+    "easy-tool_selection-02": {
+      "family": "tool_selection",
+      "gold": "create_calendar_event"
+    },
+    "easy-tool_selection-03": {
+      "family": "tool_selection",
+      "gold": "convert_currency"
+    },
+    "easy-tool_selection-04": {
+      "family": "tool_selection",
+      "gold": "translate_text"
+    },
+    "easy-tool_selection-05": {
+      "family": "tool_selection",
+      "gold": "create_calendar_event"
+    },
+    "easy-tool_selection-06": {
+      "family": "tool_selection",
+      "gold": "search_flights"
+    },
+    "easy-tool_selection-07": {
+      "family": "tool_selection",
+      "gold": "book_restaurant"
+    },
+    "easy-tool_selection-08": {
+      "family": "tool_selection",
+      "gold": "set_reminder"
+    },
+    "easy-tool_selection-09": {
+      "family": "tool_selection",
+      "gold": "get_stock_price"
+    },
+    "easy-tool_selection-10": {
+      "family": "tool_selection",
+      "gold": "call_taxi"
+    },
+    "easy-tool_selection-11": {
+      "family": "tool_selection",
+      "gold": "set_reminder"
+    },
+    "hard-opus-a-long_policy-01": {
+      "family": "long_policy",
+      "gold": "pay_subject_to_15000_sublimit"
+    },
+    "hard-opus-a-long_policy-04": {
+      "family": "long_policy",
+      "gold": "cfo"
+    },
+    "hard-opus-a-long_policy-08": {
+      "family": "long_policy",
+      "gold": "parts_covered_labour_charged"
+    },
+    "hard-opus-a-long_policy-09": {
+      "family": "long_policy",
+      "gold": "license_required"
+    },
+    "hard-opus-a-long_policy-11": {
+      "family": "long_policy",
+      "gold": "yes"
+    },
+    "hard-opus-a-long_policy-13": {
+      "family": "long_policy",
+      "gold": "yes"
+    },
+    "hard-opus-a-long_policy-17": {
+      "family": "long_policy",
+      "gold": "database_oncall"
+    },
+    "hard-opus-a-long_policy-19": {
+      "family": "long_policy",
+      "gold": "no"
+    },
+    "hard-opus-a-probability-03": {
+      "family": "probability",
+      "gold": "yes"
+    },
+    "hard-opus-a-probability-04": {
+      "family": "probability",
+      "gold": "on_time"
+    },
+    "hard-opus-a-probability-07": {
+      "family": "probability",
+      "gold": "escalated"
+    },
+    "hard-opus-a-probability-08": {
+      "family": "probability",
+      "gold": "no"
+    },
+    "hard-opus-a-temporal_numeric-03": {
+      "family": "temporal_numeric",
+      "gold": "yes"
+    },
+    "hard-opus-a-temporal_numeric-06": {
+      "family": "temporal_numeric",
+      "gold": "no"
+    },
+    "hard-opus-a-temporal_numeric-07": {
+      "family": "temporal_numeric",
+      "gold": "sep_26"
+    },
+    "hard-opus-a-temporal_numeric-09": {
+      "family": "temporal_numeric",
+      "gold": "no"
+    },
+    "hard-opus-a-temporal_numeric-12": {
+      "family": "temporal_numeric",
+      "gold": "1"
+    },
+    "hard-opus-b-ambiguous-02": {
+      "family": "ambiguous",
+      "gold": "real_incident"
+    },
+    "hard-opus-b-ambiguous-03": {
+      "family": "ambiguous",
+      "gold": "time_barred"
+    },
+    "hard-opus-b-ambiguous-07": {
+      "family": "ambiguous",
+      "gold": "within_policy"
+    },
+    "hard-opus-b-ambiguous-09": {
+      "family": "ambiguous",
+      "gold": "legitimate"
+    },
+    "hard-opus-b-ambiguous-10": {
+      "family": "ambiguous",
+      "gold": "ask_user_which_alex"
+    },
+    "hard-opus-b-ambiguous-11": {
+      "family": "ambiguous",
+      "gold": "cannot_determine"
+    },
+    "hard-opus-b-ambiguous-13": {
+      "family": "ambiguous",
+      "gold": "cannot_determine"
+    },
+    "hard-opus-b-multi_hop-03": {
+      "family": "multi_hop",
+      "gold": "tier3_cfo"
+    },
+    "hard-opus-b-multi_hop-04": {
+      "family": "multi_hop",
+      "gold": "bjorn"
+    },
+    "hard-opus-b-multi_hop-05": {
+      "family": "multi_hop",
+      "gold": "2"
+    },
+    "hard-opus-b-multi_hop-07": {
+      "family": "multi_hop",
+      "gold": "credit_20_percent"
+    },
+    "hard-opus-b-multi_hop-08": {
+      "family": "multi_hop",
+      "gold": "no"
+    },
+    "hard-opus-b-probability-01": {
+      "family": "probability",
+      "gold": "merchant_wins"
+    },
+    "hard-opus-b-probability-02": {
+      "family": "probability",
+      "gold": "upstream_provider"
+    },
+    "hard-opus-b-probability-03": {
+      "family": "probability",
+      "gold": "yes"
+    },
+    "hard-opus-b-probability-04": {
+      "family": "probability",
+      "gold": "attended"
+    },
+    "hard-opus-b-probability-06": {
+      "family": "probability",
+      "gold": "upheld"
+    },
+    "hard-opus-b-tradeoff-01": {
+      "family": "tradeoff",
+      "gold": "escalate_to_engineering"
+    },
+    "hard-opus-b-tradeoff-03": {
+      "family": "tradeoff",
+      "gold": "order_b"
+    },
+    "hard-opus-b-tradeoff-06": {
+      "family": "tradeoff",
+      "gold": "yes"
+    },
+    "hard-opus-b-tradeoff-07": {
+      "family": "tradeoff",
+      "gold": "p0_fix_24h"
+    },
+    "hard-opus-b-tradeoff-08": {
+      "family": "tradeoff",
+      "gold": "yes"
+    },
+    "hard-opus-b-tradeoff-12": {
+      "family": "tradeoff",
+      "gold": "refund_now"
+    },
+    "hard-opus-c-long_policy-02": {
+      "family": "long_policy",
+      "gold": "erase_but_retain_transaction_records"
+    },
+    "hard-opus-c-long_policy-03": {
+      "family": "long_policy",
+      "gold": "eur_400"
+    },
+    "hard-opus-c-long_policy-04": {
+      "family": "long_policy",
+      "gold": "yes"
+    },
+    "hard-opus-c-long_policy-05": {
+      "family": "long_policy",
+      "gold": "1"
+    },
+    "hard-opus-c-long_policy-08": {
+      "family": "long_policy",
+      "gold": "1"
+    },
+    "hard-opus-c-long_policy-10": {
+      "family": "long_policy",
+      "gold": "credit_minus_restocking_fee"
+    },
+    "hard-opus-c-long_policy-11": {
+      "family": "long_policy",
+      "gold": "no"
+    },
+    "hard-opus-c-probability-03": {
+      "family": "probability",
+      "gold": "kuznets_technik"
+    },
+    "hard-opus-c-temporal_numeric-02": {
+      "family": "temporal_numeric",
+      "gold": "yes"
+    },
+    "hard-opus-c-temporal_numeric-03": {
+      "family": "temporal_numeric",
+      "gold": "eur_692_00"
+    },
+    "hard-opus-c-temporal_numeric-04": {
+      "family": "temporal_numeric",
+      "gold": "usd_2335_00"
+    },
+    "hard-opus-c-temporal_numeric-06": {
+      "family": "temporal_numeric",
+      "gold": "sep_18_book_set"
+    },
+    "hard-opus-c-temporal_numeric-08": {
+      "family": "temporal_numeric",
+      "gold": "eur_498_81"
+    },
+    "hard-opus-c-temporal_numeric-12": {
+      "family": "temporal_numeric",
+      "gold": "expired_30_month_cap"
+    },
+    "hard-sol-a-adversarial-01": {
+      "family": "adversarial",
+      "gold": "deny_missing_approval"
+    },
+    "hard-sol-a-adversarial-06": {
+      "family": "adversarial",
+      "gold": "no"
+    },
+    "hard-sol-a-adversarial-07": {
+      "family": "adversarial",
+      "gold": "retain_until_2031"
+    },
+    "hard-sol-a-adversarial-08": {
+      "family": "adversarial",
+      "gold": "yes"
+    },
+    "hard-sol-a-adversarial-09": {
+      "family": "adversarial",
+      "gold": "2"
+    },
+    "hard-sol-a-adversarial-11": {
+      "family": "adversarial",
+      "gold": "standard_research"
+    },
+    "hard-sol-a-multi_hop-01": {
+      "family": "multi_hop",
+      "gold": "accept_s2_dusk"
+    },
+    "hard-sol-a-multi_hop-02": {
+      "family": "multi_hop",
+      "gold": "security_primary"
+    },
+    "hard-sol-a-multi_hop-05": {
+      "family": "multi_hop",
+      "gold": "require_director"
+    },
+    "hard-sol-a-multi_hop-07": {
+      "family": "multi_hop",
+      "gold": "admit"
+    },
+    "hard-sol-a-multi_hop-08": {
+      "family": "multi_hop",
+      "gold": "central_engineering"
+    },
+    "hard-sol-a-multi_hop-09": {
+      "family": "multi_hop",
+      "gold": "require_steward"
+    },
+    "hard-sol-a-multi_hop-10": {
+      "family": "multi_hop",
+      "gold": "approve_45_days"
+    },
+    "hard-sol-a-multi_hop-12": {
+      "family": "multi_hop",
+      "gold": "needs_authentication"
+    },
+    "hard-sol-a-trap-02": {
+      "family": "trap",
+      "gold": "no"
+    },
+    "hard-sol-a-trap-04": {
+      "family": "trap",
+      "gold": "no"
+    },
+    "hard-sol-a-trap-05": {
+      "family": "trap",
+      "gold": "0"
+    },
+    "hard-sol-a-trap-06": {
+      "family": "trap",
+      "gold": "keep_open_unresolved"
+    },
+    "hard-sol-a-trap-08": {
+      "family": "trap",
+      "gold": "late"
+    },
+    "hard-sol-a-trap-10": {
+      "family": "trap",
+      "gold": "blocked_second_review"
+    },
+    "hard-sol-a-trap-13": {
+      "family": "trap",
+      "gold": "no"
+    },
+    "hard-sol-a-trap-15": {
+      "family": "trap",
+      "gold": "no"
+    },
+    "hard-sol-b-judge_hard-01": {
+      "family": "judge_hard",
+      "gold": "yes"
+    },
+    "hard-sol-b-judge_hard-02": {
+      "family": "judge_hard",
+      "gold": "no"
+    },
+    "hard-sol-b-judge_hard-05": {
+      "family": "judge_hard",
+      "gold": "yes"
+    },
+    "hard-sol-b-judge_hard-08": {
+      "family": "judge_hard",
+      "gold": "no"
+    },
+    "hard-sol-b-judge_hard-10": {
+      "family": "judge_hard",
+      "gold": "no"
+    },
+    "hard-sol-b-judge_hard-14": {
+      "family": "judge_hard",
+      "gold": "no"
+    },
+    "hard-sol-b-judge_hard-15": {
+      "family": "judge_hard",
+      "gold": "yes"
+    },
+    "hard-sol-b-judge_hard-18": {
+      "family": "judge_hard",
+      "gold": "no"
+    },
+    "hard-sol-b-long_policy-01": {
+      "family": "long_policy",
+      "gold": "reject_entire_claim"
+    },
+    "hard-sol-b-long_policy-02": {
+      "family": "long_policy",
+      "gold": "deny_current_export"
+    },
+    "hard-sol-b-long_policy-05": {
+      "family": "long_policy",
+      "gold": "delete_profile_omar_april_and_table"
+    },
+    "hard-sol-b-long_policy-06": {
+      "family": "long_policy",
+      "gold": "east_ward"
+    },
+    "hard-sol-b-routing_hard-01": {
+      "family": "routing_hard",
+      "gold": "office_file_repair"
+    },
+    "hard-sol-b-routing_hard-02": {
+      "family": "routing_hard",
+      "gold": "ledger_reconciliation"
+    },
+    "hard-sol-b-routing_hard-03": {
+      "family": "routing_hard",
+      "gold": "network_dns"
+    },
+    "hard-sol-b-routing_hard-07": {
+      "family": "routing_hard",
+      "gold": "release_notarization"
+    },
+    "hard-sol-b-routing_hard-09": {
+      "family": "routing_hard",
+      "gold": "source_access"
+    },
+    "hard-sol-b-temporal_numeric-01": {
+      "family": "temporal_numeric",
+      "gold": "late_by_under_2h"
+    },
+    "hard-sol-b-temporal_numeric-02": {
+      "family": "temporal_numeric",
+      "gold": "over_limit"
+    },
+    "hard-sol-b-temporal_numeric-03": {
+      "family": "temporal_numeric",
+      "gold": "9_credits"
+    },
+    "hard-sol-b-temporal_numeric-04": {
+      "family": "temporal_numeric",
+      "gold": "pass"
+    },
+    "hard-sol-c-judge_hard-03": {
+      "family": "judge_hard",
+      "gold": "no"
+    },
+    "hard-sol-c-judge_hard-05": {
+      "family": "judge_hard",
+      "gold": "yes"
+    },
+    "hard-sol-c-judge_hard-07": {
+      "family": "judge_hard",
+      "gold": "no"
+    },
+    "hard-sol-c-judge_hard-08": {
+      "family": "judge_hard",
+      "gold": "no"
+    },
+    "hard-sol-c-judge_hard-09": {
+      "family": "judge_hard",
+      "gold": "yes"
+    },
+    "hard-sol-c-judge_hard-10": {
+      "family": "judge_hard",
+      "gold": "yes"
+    },
+    "hard-sol-c-judge_hard-11": {
+      "family": "judge_hard",
+      "gold": "no"
+    },
+    "hard-sol-c-judge_hard-13": {
+      "family": "judge_hard",
+      "gold": "no"
+    },
+    "hard-sol-c-judge_hard-15": {
+      "family": "judge_hard",
+      "gold": "yes"
+    },
+    "hard-sol-c-multi_hop-07": {
+      "family": "multi_hop",
+      "gold": "programme_review"
+    },
+    "hard-sol-c-multi_hop-09": {
+      "family": "multi_hop",
+      "gold": "bus_substitution"
+    },
+    "hard-sol-c-multi_hop-11": {
+      "family": "multi_hop",
+      "gold": "coverage_excluded"
+    },
+    "hard-sol-c-multi_hop-12": {
+      "family": "multi_hop",
+      "gold": "conservation_hold"
+    },
+    "hard-sol-c-multi_hop-13": {
+      "family": "multi_hop",
+      "gold": "normal_release"
+    },
+    "original-policy-01-0": {
+      "family": "policy",
+      "gold": "no"
+    },
+    "original-policy-01-1": {
+      "family": "policy",
+      "gold": "no"
+    },
+    "original-policy-02-0": {
+      "family": "policy",
+      "gold": "yes"
+    },
+    "original-policy-02-1": {
+      "family": "policy",
+      "gold": "yes"
+    },
+    "original-policy-03-0": {
+      "family": "policy",
+      "gold": "yes"
+    },
+    "original-policy-03-1": {
+      "family": "policy",
+      "gold": "yes"
+    },
+    "original-policy-04-0": {
+      "family": "policy",
+      "gold": "no"
+    },
+    "original-policy-04-1": {
+      "family": "policy",
+      "gold": "no"
+    },
+    "original-policy-05-0": {
+      "family": "policy",
+      "gold": "no"
+    },
+    "original-policy-05-1": {
+      "family": "policy",
+      "gold": "no"
+    },
+    "original-policy-06-0": {
+      "family": "policy",
+      "gold": "yes"
+    },
+    "original-policy-06-1": {
+      "family": "policy",
+      "gold": "yes"
+    },
+    "original-intent-01-0": {
+      "family": "intent",
+      "gold": "refund"
+    },
+    "original-intent-01-1": {
+      "family": "intent",
+      "gold": "refund"
+    },
+    "original-intent-02-0": {
+      "family": "intent",
+      "gold": "status"
+    },
+    "original-intent-02-1": {
+      "family": "intent",
+      "gold": "status"
+    },
+    "original-intent-03-0": {
+      "family": "intent",
+      "gold": "change_address"
+    },
+    "original-intent-03-1": {
+      "family": "intent",
+      "gold": "change_address"
+    },
+    "original-intent-04-0": {
+      "family": "intent",
+      "gold": "cancel"
+    },
+    "original-intent-04-1": {
+      "family": "intent",
+      "gold": "cancel"
+    },
+    "original-intent-05-0": {
+      "family": "intent",
+      "gold": "other"
+    },
+    "original-intent-05-1": {
+      "family": "intent",
+      "gold": "other"
+    },
+    "original-intent-06-0": {
+      "family": "intent",
+      "gold": "status"
+    },
+    "original-intent-06-1": {
+      "family": "intent",
+      "gold": "status"
+    },
+    "original-ordinal-01-0": {
+      "family": "ordinal",
+      "gold": "0"
+    },
+    "original-ordinal-01-1": {
+      "family": "ordinal",
+      "gold": "0"
+    },
+    "original-ordinal-02-0": {
+      "family": "ordinal",
+      "gold": "1"
+    },
+    "original-ordinal-02-1": {
+      "family": "ordinal",
+      "gold": "1"
+    },
+    "original-ordinal-03-0": {
+      "family": "ordinal",
+      "gold": "2"
+    },
+    "original-ordinal-03-1": {
+      "family": "ordinal",
+      "gold": "2"
+    },
+    "original-ordinal-04-0": {
+      "family": "ordinal",
+      "gold": "3"
+    },
+    "original-ordinal-04-1": {
+      "family": "ordinal",
+      "gold": "3"
+    },
+    "original-ordinal-05-0": {
+      "family": "ordinal",
+      "gold": "0"
+    },
+    "original-ordinal-05-1": {
+      "family": "ordinal",
+      "gold": "0"
+    },
+    "original-ordinal-06-0": {
+      "family": "ordinal",
+      "gold": "2"
+    },
+    "original-ordinal-06-1": {
+      "family": "ordinal",
+      "gold": "2"
+    },
+    "original-extraction-01-0": {
+      "family": "extraction",
+      "gold": "pickup"
+    },
+    "original-extraction-01-1": {
+      "family": "extraction",
+      "gold": "pickup"
+    },
+    "original-extraction-02-0": {
+      "family": "extraction",
+      "gold": "unknown"
+    },
+    "original-extraction-02-1": {
+      "family": "extraction",
+      "gold": "unknown"
+    },
+    "original-extraction-03-0": {
+      "family": "extraction",
+      "gold": "courier"
+    },
+    "original-extraction-03-1": {
+      "family": "extraction",
+      "gold": "courier"
+    },
+    "original-extraction-04-0": {
+      "family": "extraction",
+      "gold": "post"
+    },
+    "original-extraction-04-1": {
+      "family": "extraction",
+      "gold": "post"
+    },
+    "original-extraction-05-0": {
+      "family": "extraction",
+      "gold": "unknown"
+    },
+    "original-extraction-05-1": {
+      "family": "extraction",
+      "gold": "unknown"
+    },
+    "original-extraction-06-0": {
+      "family": "extraction",
+      "gold": "courier"
+    },
+    "original-extraction-06-1": {
+      "family": "extraction",
+      "gold": "courier"
+    },
+    "original-adequacy-01-0": {
+      "family": "adequacy",
+      "gold": "yes"
+    },
+    "original-adequacy-01-1": {
+      "family": "adequacy",
+      "gold": "yes"
+    },
+    "original-adequacy-02-0": {
+      "family": "adequacy",
+      "gold": "no"
+    },
+    "original-adequacy-02-1": {
+      "family": "adequacy",
+      "gold": "no"
+    },
+    "original-adequacy-03-0": {
+      "family": "adequacy",
+      "gold": "no"
+    },
+    "original-adequacy-03-1": {
+      "family": "adequacy",
+      "gold": "no"
+    },
+    "original-adequacy-04-0": {
+      "family": "adequacy",
+      "gold": "yes"
+    },
+    "original-adequacy-04-1": {
+      "family": "adequacy",
+      "gold": "yes"
+    },
+    "original-adequacy-05-0": {
+      "family": "adequacy",
+      "gold": "no"
+    },
+    "original-adequacy-05-1": {
+      "family": "adequacy",
+      "gold": "no"
+    },
+    "original-adequacy-06-0": {
+      "family": "adequacy",
+      "gold": "yes"
+    },
+    "original-adequacy-06-1": {
+      "family": "adequacy",
+      "gold": "yes"
+    },
+    "original-routing-01-0": {
+      "family": "routing",
+      "gold": "math"
+    },
+    "original-routing-01-1": {
+      "family": "routing",
+      "gold": "math"
+    },
+    "original-routing-02-0": {
+      "family": "routing",
+      "gold": "coding"
+    },
+    "original-routing-02-1": {
+      "family": "routing",
+      "gold": "coding"
+    },
+    "original-routing-03-0": {
+      "family": "routing",
+      "gold": "coding_agent"
+    },
+    "original-routing-03-1": {
+      "family": "routing",
+      "gold": "coding_agent"
+    },
+    "original-routing-04-0": {
+      "family": "routing",
+      "gold": "document"
+    },
+    "original-routing-04-1": {
+      "family": "routing",
+      "gold": "document"
+    },
+    "original-routing-05-0": {
+      "family": "routing",
+      "gold": "tools"
+    },
+    "original-routing-05-1": {
+      "family": "routing",
+      "gold": "tools"
+    },
+    "original-routing-06-0": {
+      "family": "routing",
+      "gold": "general"
+    },
+    "original-routing-06-1": {
+      "family": "routing",
+      "gold": "general"
+    }
+  }
+}

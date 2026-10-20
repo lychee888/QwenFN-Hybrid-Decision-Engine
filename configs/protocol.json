@@ -1,0 +1,111 @@
+{
+  "choice": {
+    "key_rule": "caller keys come from the request; internal slot labels A..P are positional, not semantic",
+    "max_options": 16,
+    "min_options": 2,
+    "slot_labels": "ABCDEFGHIJKLMNOP",
+    "unsupported_extension": "choice over 17..255 options is a later extension with separate validation"
+  },
+  "confidence": {
+    "jev_confidence": null,
+    "note": "Jev's documented primitive-specific confidence formula is NOT implemented; it stays absent until verified against the reference implementation",
+    "raw_max_probability": "reported as the maximum probability among the active slots",
+    "status": "absent_unverified_reference_formula"
+  },
+  "kinds": [
+    "noul",
+    "choice",
+    "score"
+  ],
+  "limits": {
+    "max_key_chars": 64,
+    "max_option_description_chars": 2048,
+    "max_question_chars": 4096,
+    "max_state_chars": 32768,
+    "max_total_chars": 96000,
+    "oversized_policy": "rejected, never truncated"
+  },
+  "noul": {
+    "keys": [
+      "false",
+      "true"
+    ],
+    "returns": "P(true) from slot 1"
+  },
+  "s1_definition": {
+    "generated_tokens": 0,
+    "note": "a chat response with thinking disabled is not a trained S1 model and is not reported as one",
+    "returns": "typed probabilities only"
+  },
+  "schema": "qfn.protocol/1",
+  "score": {
+    "levels": 6,
+    "order": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "rubric_rule": "exactly six ordered rubric descriptions are required and appear in the prompt",
+    "unsupported_extension": "arbitrary 2..10 rubric levels are a later extension with separate validation"
+  },
+  "slots": {
+    "inactive_slot_rule": "masked before normalisation and returned as exactly 0.0",
+    "num_slots": 24,
+    "ranges": {
+      "choice": [
+        8,
+        24
+      ],
+      "noul": [
+        0,
+        2
+      ],
+      "score": [
+        2,
+        8
+      ]
+    },
+    "source": {
+      "file": "judge_config.json",
+      "repo": "autotrust/JEV-27B",
+      "revision": "ff9b67b9bcb2dc5a8499d540e0c4cd10b254f3a2",
+      "sha256": "372748b6c876e008ad05ecfb3a361f481e85444eaa083b31234dbded5c2f7cb1",
+      "template_version": "bare-v1"
+    },
+    "verbalizers": [
+      "false",
+      "true",
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P"
+    ]
+  },
+  "stage": "S1 buildout (protocol and data preparation tooling); no runtime integration",
+  "target": {
+    "nonfinite_policy": "rejected",
+    "sum_tolerance": 1e-06,
+    "uniform_policy": "kept; uniformity is not a drop reason"
+  }
+}

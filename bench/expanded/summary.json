@@ -1,0 +1,410 @@
+{
+  "schema": "qfn.expanded-panel-results/1",
+  "status": "measured",
+  "measured_calls": 3300,
+  "errors": 16,
+  "errors_note": "16 consecutive DMUP shuffle-control calls in repeat 1 failed with HTTP 502 after the gateway engine socket timeout. Engine logs show a concurrent long-running request; its origin and causal contribution were not established. All failures remain wrong in the full denominator, without retries or replacement probabilities.",
+  "retries": 0,
+  "exclusions": 0,
+  "date_utc": "2026-10-20",
+  "system": "Unchanged base weights, B0 typed-decision runtime with 2 to 256 choice options; no trained adapter.",
+  "runtime_manifest_sha256": "9bcc6bba4cc78305cb38fee7827d7e7e43b91f74ea930c650d002674dc7cf26e",
+  "trained_adapter": "not used",
+  "accuracy_rule": "Highest probability; exact ties broken by option key name (frozen benchmark rule). The live API breaks exact ties by request option order; both are reported. Failed calls count as wrong under both rules.",
+  "counts_benchmark_rule": {
+    "chaosnli96/repeat1": {
+      "correct": 65,
+      "n": 96
+    },
+    "chaosnli96/repeat2": {
+      "correct": 65,
+      "n": 96
+    },
+    "chaosnli96/repeat3": {
+      "correct": 65,
+      "n": 96
+    },
+    "chaosnli_full1599": {
+      "correct": 1028,
+      "n": 1599
+    },
+    "dmup/repeat1": {
+      "correct": 176,
+      "n": 200
+    },
+    "dmup/repeat1/shuffle_controls": {
+      "correct": 20,
+      "n": 40
+    },
+    "dmup/repeat2": {
+      "correct": 178,
+      "n": 200
+    },
+    "dmup/repeat2/shuffle_controls": {
+      "correct": 35,
+      "n": 40
+    },
+    "dmup/repeat3": {
+      "correct": 176,
+      "n": 200
+    },
+    "dmup/repeat3/shuffle_controls": {
+      "correct": 36,
+      "n": 40
+    },
+    "legacy18score/repeat1": {
+      "correct": 16,
+      "n": 18
+    },
+    "legacy18score/repeat2": {
+      "correct": 15,
+      "n": 18
+    },
+    "legacy18score/repeat3": {
+      "correct": 16,
+      "n": 18
+    },
+    "legacy213strict/repeat1": {
+      "correct": 198,
+      "n": 213
+    },
+    "legacy213strict/repeat2": {
+      "correct": 198,
+      "n": 213
+    },
+    "legacy213strict/repeat3": {
+      "correct": 199,
+      "n": 213
+    }
+  },
+  "counts_serving_rule": {
+    "chaosnli96/repeat1": {
+      "correct": 65,
+      "n": 96
+    },
+    "chaosnli96/repeat2": {
+      "correct": 65,
+      "n": 96
+    },
+    "chaosnli96/repeat3": {
+      "correct": 65,
+      "n": 96
+    },
+    "chaosnli_full1599": {
+      "correct": 1027,
+      "n": 1599
+    },
+    "dmup/repeat1": {
+      "correct": 176,
+      "n": 200
+    },
+    "dmup/repeat1/shuffle_controls": {
+      "correct": 20,
+      "n": 40
+    },
+    "dmup/repeat2": {
+      "correct": 178,
+      "n": 200
+    },
+    "dmup/repeat2/shuffle_controls": {
+      "correct": 35,
+      "n": 40
+    },
+    "dmup/repeat3": {
+      "correct": 176,
+      "n": 200
+    },
+    "dmup/repeat3/shuffle_controls": {
+      "correct": 36,
+      "n": 40
+    },
+    "legacy18score/repeat1": {
+      "correct": 16,
+      "n": 18
+    },
+    "legacy18score/repeat2": {
+      "correct": 15,
+      "n": 18
+    },
+    "legacy18score/repeat3": {
+      "correct": 16,
+      "n": 18
+    },
+    "legacy213strict/repeat1": {
+      "correct": 196,
+      "n": 213
+    },
+    "legacy213strict/repeat2": {
+      "correct": 198,
+      "n": 213
+    },
+    "legacy213strict/repeat3": {
+      "correct": 199,
+      "n": 213
+    }
+  },
+  "lanes_benchmark_rule": {
+    "chaosnli96": {
+      "scheduled": 288,
+      "correct": 195,
+      "accuracy": 0.6770833333333334,
+      "ece_top1_10bin": 0.2165125227664021
+    },
+    "dmup": {
+      "scheduled": 720,
+      "correct": 621,
+      "accuracy": 0.8625,
+      "ece_top1_10bin": 0.03985990052551956
+    },
+    "legacy18score": {
+      "scheduled": 54,
+      "correct": 47,
+      "accuracy": 0.8703703703703703,
+      "ece_top1_10bin": 0.08505159311073074
+    },
+    "legacy213strict": {
+      "scheduled": 639,
+      "correct": 595,
+      "accuracy": 0.9311424100156495,
+      "ece_top1_10bin": 0.048876327787323946
+    }
+  },
+  "clustered_bootstrap_accuracy_ci95": {
+    "chaosnli96": [
+      0.5833333333333334,
+      0.7708333333333334
+    ],
+    "dmup": [
+      0.8221543927648578,
+      0.9119864341085269
+    ],
+    "legacy18score": [
+      0.5833333333333334,
+      1.0
+    ],
+    "legacy213strict": [
+      0.8797814207650273,
+      0.9544626593806923
+    ]
+  },
+  "dmup_shuffle_controls": {
+    "1": {
+      "pairs": 40,
+      "semantic_flips": 3
+    },
+    "2": {
+      "pairs": 40,
+      "semantic_flips": 2
+    },
+    "3": {
+      "pairs": 40,
+      "semantic_flips": 1
+    }
+  },
+  "full_chaosnli": {
+    "n": 1599,
+    "accuracy": 0.642901813633521,
+    "accuracy_ci95_by_item_bootstrap": [
+      0.6178861788617886,
+      0.6660412757973734
+    ],
+    "brier_vs_human_votes_mean": 0.307762,
+    "tvd_vs_human_votes_mean": 0.361796,
+    "note": "Brier/TVD need the human vote distributions from the pinned source; they are not redistributed here."
+  },
+  "comparisons": {
+    "legacy213strict_vs_published_jev_1_13_0": {
+      "reference": "JevBench public per-task outcomes (MIT), jev-1.13.0, 186/213; not rerun",
+      "by_rule_and_repeat": {
+        "correct": {
+          "1": {
+            "reference_correct": 186,
+            "ours_correct": 198,
+            "ours_only_correct": 15,
+            "reference_only_correct": 3,
+            "exact_two_sided_p": 0.007537841796875
+          },
+          "2": {
+            "reference_correct": 186,
+            "ours_correct": 198,
+            "ours_only_correct": 15,
+            "reference_only_correct": 3,
+            "exact_two_sided_p": 0.007537841796875
+          },
+          "3": {
+            "reference_correct": 186,
+            "ours_correct": 199,
+            "ours_only_correct": 15,
+            "reference_only_correct": 2,
+            "exact_two_sided_p": 0.002349853515625
+          }
+        },
+        "correct_serving": {
+          "1": {
+            "reference_correct": 186,
+            "ours_correct": 196,
+            "ours_only_correct": 14,
+            "reference_only_correct": 4,
+            "exact_two_sided_p": 0.0308837890625
+          },
+          "2": {
+            "reference_correct": 186,
+            "ours_correct": 198,
+            "ours_only_correct": 15,
+            "reference_only_correct": 3,
+            "exact_two_sided_p": 0.007537841796875
+          },
+          "3": {
+            "reference_correct": 186,
+            "ours_correct": 199,
+            "ours_only_correct": 15,
+            "reference_only_correct": 2,
+            "exact_two_sided_p": 0.002349853515625
+          }
+        }
+      },
+      "accuracy_difference_ci95_benchmark_rule": [
+        0.021909233176838808,
+        0.09546165884194052
+      ]
+    },
+    "legacy18score_choice_surrogate_vs_published_jev": {
+      "reference_correct": 14,
+      "n": 18,
+      "ours_by_repeat_benchmark_rule": [
+        16,
+        15,
+        16
+      ],
+      "note": "Our lane asks the score items as choices; Jev used its native score primitive. Not a like-for-like score comparison."
+    },
+    "chaosnli_full1599_vs_published_jev_1_13_0": {
+      "reference": "Jev 1.13.0 published per-item predictions on the Praveenrajus/jev-bench ChaosNLI test rows; not rerun",
+      "by_rule": {
+        "correct": {
+          "reference_correct": 981,
+          "ours_correct": 1028,
+          "ours_only_correct": 143,
+          "reference_only_correct": 96,
+          "exact_two_sided_p": 0.0028473997457381405
+        },
+        "correct_serving": {
+          "reference_correct": 981,
+          "ours_correct": 1027,
+          "ours_only_correct": 140,
+          "reference_only_correct": 94,
+          "exact_two_sided_p": 0.0031791069083491916
+        }
+      },
+      "tvd_vs_human_votes": {
+        "ours_mean": 0.36179581487052515,
+        "jev_published_mean": 0.3320919324577861,
+        "ours_minus_jev_mean": 0.029703882412739028,
+        "ci95_item_bootstrap": [
+          0.021075733151703198,
+          0.038139699865783125
+        ],
+        "bootstrap": {
+          "draws": 10000,
+          "seed": 20261016
+        },
+        "rows_ours_closer": 689,
+        "rows_jev_closer": 910,
+        "note": "Positive means our probabilities are further from the human vote distribution. Needs the pinned source rows to recompute."
+      }
+    },
+    "chaosnli96_vs_published_jev_1_13_0": {
+      "reference_plurality_accuracy": 0.6458333333333334,
+      "ours_by_repeat_benchmark_rule": {
+        "1": 0.6770833333333334,
+        "2": 0.6770833333333334,
+        "3": 0.6770833333333334
+      },
+      "mcnemar_p_by_repeat": {
+        "1": 0.5078125,
+        "2": 0.5078125,
+        "3": 0.5078125
+      },
+      "tvd_ours_minus_reference_ci95": [
+        0.004828579247280958,
+        0.06158231027551858
+      ],
+      "note": "Positive TVD difference means our probabilities are further from the human vote distribution than the published ones."
+    },
+    "dmup_240_vs_saved_jev_measurement": {
+      "reference": "Owner-authorised historical Jev 1.13.0 measurement of the same 240 frozen items (two passes). Saved output, not a published file; per-item outputs not redistributed.",
+      "items": "200 primary + 40 shuffled-option controls",
+      "passes": {
+        "1": {
+          "1": {
+            "first_correct": 206,
+            "second_correct": 196,
+            "mcnemar_exact_two_sided_p": 0.09873714670538902
+          },
+          "2": {
+            "first_correct": 206,
+            "second_correct": 213,
+            "mcnemar_exact_two_sided_p": 0.11846923828125
+          },
+          "3": {
+            "first_correct": 206,
+            "second_correct": 212,
+            "mcnemar_exact_two_sided_p": 0.210113525390625
+          }
+        },
+        "2": {
+          "1": {
+            "first_correct": 207,
+            "second_correct": 196,
+            "mcnemar_exact_two_sided_p": 0.06142834573984146
+          },
+          "2": {
+            "first_correct": 207,
+            "second_correct": 213,
+            "mcnemar_exact_two_sided_p": 0.1795654296875
+          },
+          "3": {
+            "first_correct": 207,
+            "second_correct": 212,
+            "mcnemar_exact_two_sided_p": 0.3017578125
+          }
+        }
+      }
+    }
+  },
+  "run_identity": {
+    "pb1_schedule_body_sha256": "7d4b6a1a5beb0c25aec78c463dd65aece678dade71582219f137bc689676f642",
+    "full_chaos_items_sha256": "303358f8b62f1f9741853fcc4f1a0bfa363aed98c6f0259472e3243b15bd7659",
+    "serving_receipt_sha256": "ae5d94ee7de3f381c37e38ee80b64b051bc93015f89cd408fdd95f9be020352c",
+    "evidence_archive_sha256": "6d418e3b17d75bff690d36d9b661650db95bca7765add752aa7f493c18e62eed"
+  },
+  "sources": {
+    "jevbench_legacy": {
+      "url": "https://github.com/fstandhartinger/jevbench/blob/7625ecb1b075cfe4d09d34141d353325825eea1d/results/v1.2/jevbench-v1.2-per-task.json",
+      "sha256": "c772b3b85809f483449ec2a6ae0272347371ed5f40f7faff8394ecf4ee22ae7c",
+      "license": "MIT"
+    },
+    "chaosnli_rows": {
+      "url": "https://huggingface.co/datasets/Praveenrajus/jev-bench/resolve/c37b0f6ab1687376ec9ae8dbd9f343163a68252b/data/chaosnli/test.jsonl",
+      "sha256": "74ab0c4d146a76777d045986bf7a7657651cc9685bba27a8d1d70a374d0cc8ce",
+      "license": "CC BY-SA 4.0 (per the dataset card)"
+    },
+    "jev_chaosnli_predictions": {
+      "url": "https://huggingface.co/datasets/Praveenrajus/jev-bench/resolve/c37b0f6ab1687376ec9ae8dbd9f343163a68252b/results/jev-1.13.0/test_predictions.jsonl",
+      "sha256": "b2f27ae059dbf5a662ee7ad94012f77c970281b9442fce0654401ece77a097f0"
+    },
+    "dmup": {
+      "repo": "https://github.com/gazelle93/decision-models-under-pressure",
+      "revision": "21820dc8b455e37aebaf5a83122233b6e564c109",
+      "license": "data CC BY-SA 4.0 per the dataset card; repository code is read-only per its README"
+    }
+  },
+  "scope": [
+    "All items are public material, and the legacy tasks were used during development. This is not sealed or fresh holdout evidence.",
+    "Not an official modern JevBench score. Jev was not run for this panel; comparisons use published or previously saved outputs.",
+    "Repeats reuse the same items. The 96 repeated ChaosNLI items also appear in the full 1,599-row lane and are not counted twice as unique items.",
+    "Option probabilities are normalised option logits, not certified calibrated confidence.",
+    "Measured on the promoted production deployment (wide-label runtime) with the trained adapter disabled.",
+    "No speed or latency figures are reported here."
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "note": "Wide-label lane config blocks (opt-in). Add 'gateway_wide_choice' to the gateway's decision_api.json as the top-level key 'wide_choice', and 'engine_wide_choice' to the engine capture config as the top-level key 'wide_choice'. Replace CATALOG_ABS_PATH with the absolute path of configs/wide-label-catalog.json on that node. The engine capture config is read once at startup, so the engine needs a coordinated restart. With the key absent or enabled=false, both sides behave exactly as released.",
+  "gateway_wide_choice": {
+    "enabled": true,
+    "catalog_path": "CATALOG_ABS_PATH/configs/wide-label-catalog.json",
+    "catalog_file_sha256": "71a861ff84956974dd3294e20d09f86a49e323d4eff03299c30184e5517fb9bf",
+    "catalog_digest": "d3aba3f02f6af23c32303e4b6617cde13da8e3c82ca7876d2c1b635450aa71d1",
+    "tokenizer_revision": "1b3c3cedc14fb3bee4294dea5e3515af74b8268a",
+    "template_digest": "ed5cfb299d0d4ad9789a7b6b267108027af9fd07e474fe9164b22fc41ad58e52",
+    "max_options": 256
+  },
+  "engine_wide_choice": {
+    "enabled": true,
+    "catalog_path": "CATALOG_ABS_PATH/configs/wide-label-catalog.json",
+    "catalog_file_sha256": "71a861ff84956974dd3294e20d09f86a49e323d4eff03299c30184e5517fb9bf",
+    "catalog_digest": "d3aba3f02f6af23c32303e4b6617cde13da8e3c82ca7876d2c1b635450aa71d1",
+    "tokenizer_revision": "1b3c3cedc14fb3bee4294dea5e3515af74b8268a",
+    "template_digest": "ed5cfb299d0d4ad9789a7b6b267108027af9fd07e474fe9164b22fc41ad58e52"
+  },
+  "calls": {
+    "decide": {
+      "kind": "choice",
+      "state": "The cart has 31 items, two of them damaged.",
+      "question": "Which handling code applies?",
+      "options": [
+        {"key": "standard", "description": "ship as-is"},
+        {"key": "repack", "description": "repack before shipping"},
+        {"key": "hold", "description": "hold for inspection"},
+        {"key": "partial", "description": "ship the undamaged items"},
+        {"key": "return", "description": "return to supplier"},
+        {"key": "split", "description": "split the shipment"},
+        {"key": "escalate", "description": "escalate to the warehouse lead"},
+        {"key": "manual", "description": "manual review"},
+        {"key": "k9", "description": "option 9"},
+        {"key": "k10", "description": "option 10"},
+        {"key": "k11", "description": "option 11"},
+        {"key": "k12", "description": "option 12"},
+        {"key": "k13", "description": "option 13"},
+        {"key": "k14", "description": "option 14"},
+        {"key": "k15", "description": "option 15"},
+        {"key": "k16", "description": "option 16"},
+        {"key": "k17", "description": "option 17"}
+      ]
+    },
+    "systemone": {
+      "model": "any",
+      "state": "The cart has 31 items, two of them damaged.",
+      "questions": {
+        "handling": {
+          "type": "choice",
+          "instructions": "Which handling code applies?",
+          "criteria": {"standard": null, "repack": null, "hold": null, "partial": null,
+                       "return": null, "split": null, "escalate": null, "manual": null,
+                       "k9": null, "k10": null, "k11": null, "k12": null, "k13": null,
+                       "k14": null, "k15": null, "k16": null, "k17": null}
+        }
+      }
+    }
+  }
+}

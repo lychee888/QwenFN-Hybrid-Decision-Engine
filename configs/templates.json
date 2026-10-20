@@ -1,0 +1,89 @@
+{
+  "canonical_record_fields": [
+    "id",
+    "group_id",
+    "source",
+    "task_family",
+    "kind",
+    "state",
+    "question",
+    "option_descriptions",
+    "option_keys",
+    "target_probs",
+    "label_provenance",
+    "token_ids",
+    "template_version"
+  ],
+  "reference_verbalizer_ids": {
+    "scope": "reference checkpoint only (autotrust/JEV-27B, vocab 248320); NOT valid for the local serving checkpoint",
+    "status": "reference_only",
+    "values": [
+      3721,
+      1802,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47
+    ]
+  },
+  "schema": "qfn.templates/1",
+  "score_rubrics_default": [
+    "entirely unreliable",
+    "mostly unreliable",
+    "leaning unreliable",
+    "leaning reliable",
+    "mostly reliable",
+    "fully reliable"
+  ],
+  "score_rubrics_origin": "declared experiment default; the corpus carries bare levels 0..5 only",
+  "semantic_serialization": {
+    "encoding": "JSON, keys sorted, compact separators, UTF-8, non-ASCII preserved, no trailing newline",
+    "hash": "sha256 of the encoded bytes",
+    "schema": "qfn.semantic/1"
+  },
+  "templates": {
+    "autotrust_raw_bare-v1": {
+      "provenance": "autotrust/JEV-27B@ff9b67b9bcb2dc5a8499d540e0c4cd10b254f3a2: verbatim prompt shape transcribed from the pinned card/code (f\"[kind] {kind}\\n[state] {state}\\n[question] {question}\\n[options]\\n\" + lines + \"\\n[decision]:\"), slot map from judge_config.json. Token ids are NOT known for the local serving checkpoint.",
+      "template_id": "autotrust_raw_bare-v1",
+      "token_ids_known": false,
+      "verbatim_reference": true,
+      "version": "bare-v1"
+    },
+    "qwen_chat_v1": {
+      "provenance": "Chat representation only: messages must be rendered by the real tokenizer's chat template (chat_template.jinja of the pinned serving checkpoint). No token ids are assumed or synthesised in this repository.",
+      "template_id": "qwen_chat_v1",
+      "token_ids_known": false,
+      "verbatim_reference": false,
+      "version": "v1"
+    }
+  },
+  "tokenization": {
+    "note": "Training and serving must tokenize through this one path; token ids are recorded from the actual tokenizer, never synthesised.",
+    "semantic_schema": "qfn.semantic/1",
+    "single_path": true,
+    "template_id": "autotrust_raw_bare-v1",
+    "template_version": "bare-v1",
+    "token_ids_known": false,
+    "tokenizer_chat_template_sha256": null,
+    "tokenizer_revision": null,
+    "valid": true
+  }
+}
