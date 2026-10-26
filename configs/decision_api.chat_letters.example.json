@@ -8,7 +8,7 @@
   "engine": {
     "base_url": "http://127.0.0.1:8888",
     "model": "qwen3.8-flash-next-uncensored",
-    "socket_timeout_s": 30.0,
+    "socket_timeout_s": 90.0,
     "request_timeout_s": 120.0,
     "max_proxy_body_bytes": 8388608,
     "health_ping": false,
@@ -60,7 +60,7 @@
   },
   "timeouts": {
     "request_s": 120.0,
-    "socket_s": 30.0,
+    "socket_s": 90.0,
     "capture_deadline_s": 30.0,
     "poll_initial_ms": 5.0,
     "poll_max_ms": 100.0,

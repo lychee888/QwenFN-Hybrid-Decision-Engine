@@ -87,6 +87,17 @@ Generated defaults cap the body at 262,144 bytes, state at 32,768 characters, qu
 
 Capture decoding checks the caller/engine request binding, prompt-token digest, terminal position, file safety and row identity. It refuses ambiguity, stale data and corrupt captures. Probabilities are not returned on failure.
 
+## First request after a cold engine
+
+A freshly loaded engine answers its first request slowly: measured ~46 s on a dual-DGX-Spark
+GB10 head node (2026-10-26) before the initial compile/warmup finishes. If `engine.socket_timeout_s`
+sits below that budget, the first decision after every boot fails with
+`502 backend_error: TransportError: engine /tokenize request failed: TimeoutError` and then
+succeeds on retry, which reads like a real fault. The shipped defaults use 90 s for
+`socket_timeout_s` / `timeouts.socket_s` and keep `request_timeout_s` at 120 s, so the cold
+request waits instead of erroring. Either keep that ratio, or send one warm completion (a
+one-token `/v1/completions` call) after `/health` returns 200 and before serving decisions.
+
 ## Ordinary engine routes
 
 Use ordinary `/v1/chat/completions`, `/v1/completions`, `/v1/models`, tokenization and other engine endpoints through the frontend. Tool-call and SSE semantics belong to the separately launched matching engine. The router does not send these requests through the typed gateway's stricter body or concurrency contract.

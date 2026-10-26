@@ -987,6 +987,26 @@ def test_chat_letters_example_config_is_a_copy_of_the_default_config_but_for_the
     assert default.chat_template_kwargs == {}
 
 
+# Measured on the dual-DGX-Spark GB10 head node (2026-10-26): the first engine request
+# after a fresh weight load pays ~46 s of compile/warmup before it can answer anything.
+# A socket timeout below that budget turns the first decision after every boot into a
+# spurious TransportError ("engine /tokenize request failed: TimeoutError") that then
+# succeeds on retry. Keep the shipped defaults above the measured cold-start budget.
+COLD_START_BUDGET_S = 46.0
+
+
+def test_shipped_socket_timeout_covers_the_measured_cold_start_budget():
+    for path in (ROOT / "configs" / "decision_api.json", EXAMPLE_CONFIG):
+        raw = json.loads(path.read_text(encoding="utf-8"))
+        engine_socket = raw["engine"]["socket_timeout_s"]
+        flat_socket = raw["timeouts"]["socket_s"]
+        request_s = raw["engine"]["request_timeout_s"]
+        assert engine_socket >= COLD_START_BUDGET_S, (path.name, engine_socket)
+        assert flat_socket >= COLD_START_BUDGET_S, (path.name, flat_socket)
+        assert engine_socket < request_s, (path.name, engine_socket, request_s)
+        assert backend.load_api_config(path).timeout_socket_s >= COLD_START_BUDGET_S
+
+
 def test_decide_choice_under_the_example_chat_letters_config_end_to_end(tmp_path):
     """The example config file itself drives a real fixture-mode gateway."""
     eng = backend.FixtureEngineServer(model="fixture-model", capture_dir=pathlib.Path(tmp_path) / "capture")

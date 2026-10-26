@@ -85,12 +85,12 @@
     {
       "path": "configs/decision_api.chat_letters.example.json",
       "bytes": 4595,
-      "sha256": "7ab56e0dab82939cae0d16bdcc890437984e297477ffc613f434d43b7b71ade9"
+      "sha256": "d4be4bbeb3b2293a184186060dbb87ec8bb1a55155f8bab59618cf14831a16c4"
     },
     {
       "path": "configs/decision_api.json",
       "bytes": 4091,
-      "sha256": "11a5795523410f0e71a37fe4e23dea0c8a414d06a5c180fb0c3305dd6006b1bf"
+      "sha256": "a7806e3fe968586465ecf2d8dde504527f5e012cf26d2bf0c68fd6017db2db9b"
     },
     {
       "path": "configs/nginx.conf",
@@ -129,8 +129,8 @@
     },
     {
       "path": "docs/api.md",
-      "bytes": 7461,
-      "sha256": "8e70ae07799c78402d68d4b1cbf84415b828f6529459670f9d2c8080279a558e"
+      "bytes": 8215,
+      "sha256": "a477bb102e2f7caad9e1d3e7d95a39b76f4bdc2da46947fd843a1f5d639ca5f9"
     },
     {
       "path": "docs/benchmarks.md",
@@ -369,8 +369,8 @@
     },
     {
       "path": "tests/test_api.py",
-      "bytes": 47320,
-      "sha256": "db9d151fc08fd90271995b395b95fe780c655c06c7a068aadbc1da099b65f848"
+      "bytes": 47458,
+      "sha256": "3eed095279cd78dd7305808702e3065d032e64d28cb9b3b9304be75a7f11c070"
     },
     {
       "path": "tests/test_backend.py",
